@@ -1,5 +1,22 @@
 .App {
+  height: 100%;
+  padding: 2em 0;
   text-align: center;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100vh - 2em - 4px); /*parent padding 2em and 2px + 2px borders top and bottom*/
+	max-width: 1400px;
+	margin: 0 auto;
+	border: 2px solid #eee;
+	background-color: #fafafa;
+	font-size: calc(10px + 2vmin);
 }
 
 .App-logo {
