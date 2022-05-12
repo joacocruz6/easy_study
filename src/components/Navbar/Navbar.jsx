@@ -1,41 +1,14 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import Offcanvas from "react-bootstrap/Offcanvas";
 import "./Navbar.css";
-import { useState } from "react";
-
-const Menu = () => {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    return (
-        <>
-        <Button variant="primary" onClick={handleShow}>
-            Launch
-        </Button>
-
-        <Offcanvas show={show} onHide={handleClose} scroll={true} backdrop={false}>
-            <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
-            </Offcanvas.Body>
-        </Offcanvas>
-        </>
-    );
-}
+import NavigationMenu from "./NavigationMenu/NavigationMenu.jsx";
 
 const Navigation = () => {
     return (
         <>
         <Navbar className="navigation" fixed="top" variant="dark">
             <Container>
-                <Menu />
+                <NavigationMenu />
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text>

@@ -1,0 +1,19 @@
+.MenuButton {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+
+.MenuButton:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+    outline-color: #000000;
+}
+
+.MenuButton:focus {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    outline-color: #000000;
+}
