@@ -17,8 +17,8 @@ const NavigationMenu = () => {
                 Menu
             </Button>
 
-            <Offcanvas show={show} onHide={handleClose} scroll={true} backdrop={false}>
-                <Offcanvas.Header closeButton>
+            <Offcanvas className="NavigationMenu" show={show} onHide={handleClose} scroll={true} backdrop={false}>
+                <Offcanvas.Header className="NavigationHeader" closeButton>
                     <Offcanvas.Title>Menu</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
