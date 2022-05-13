@@ -28,9 +28,11 @@ const NavigationMenu = () => {
 					<Offcanvas.Title>Menu</Offcanvas.Title>
 				</Offcanvas.Header>
 				<Offcanvas.Body>
-					<NavigationItem link="#link1" text="Link 1" />
-					<NavigationItem link="#link2" text="Link 2" />
-					<NavigationItem link="#link3" text="Link 3" />
+					<div className="d-grid gap-2">
+						<NavigationItem link="#link1" text="Link 1" />
+						<NavigationItem link="#link2" text="Link 2" />
+						<NavigationItem link="#link3" text="Link 3" />
+					</div>
 				</Offcanvas.Body>
 			</Offcanvas>
 		</>

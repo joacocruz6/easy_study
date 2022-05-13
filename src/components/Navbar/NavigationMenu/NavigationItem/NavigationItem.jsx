@@ -1,16 +1,15 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+
+import "./NavigationItem.css";
 
 const NavigationItem = (props) => {
 	return (
 		<>
-			<Container>
-				<Row>
-					<Col>
-						<a href={props.link}>{props.text}</a>
-					</Col>
-				</Row>
-			</Container>
+			<Button className="navigation_button" href={props.link}>
+				{" "}
+				{props.text}{" "}
+			</Button>
 		</>
 	);
 };
