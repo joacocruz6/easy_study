@@ -1,28 +1,28 @@
 .MenuButton {
-    background-color: #ffffff;
-    color: #000000;
-    border-color: #000000;
+	background-color: #ffffff;
+	color: #000000;
+	border-color: #000000;
 }
 
 .MenuButton:hover {
-    background-color: #000000;
-    color: #ffffff;
-    border-color: #000000;
-    outline-color: #000000;
+	background-color: #000000;
+	color: #ffffff;
+	border-color: #000000;
+	outline-color: #000000;
 }
 
 .MenuButton:focus {
-    background-color: #ffffff;
-    color: #000000;
-    border-color: #000000;
-    outline-color: #000000;
+	background-color: #ffffff;
+	color: #000000;
+	border-color: #000000;
+	outline-color: #000000;
 }
 
 .NavigationHeader {
-    background-color: #4a154b;
+	background-color: #4a154b;
 }
 
 .NavigationMenu {
-    background-color: #1d1a1af3;
-    color: #ffffff;
+	background-color: #1d1a1af3;
+	color: #ffffff;
 }
