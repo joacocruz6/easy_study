@@ -6,7 +6,6 @@
 .navigation_button:hover {
 	border-color: #4a154b;
 	background-color: #4a154b;
-	outline: 0.2em solid rgb(20, 100, 30);
 }
 
 .navigation_button:active {

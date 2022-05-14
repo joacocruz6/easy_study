@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "./NavigationMenu.css";
 import NavigationItem from "./NavigationItem/NavigationItem";
+import NavigationProfile from "./NavigationProfile/NavigationProfile";
+import { BsList } from "react-icons/bs";
 
 const NavigationMenu = () => {
 	const [show, setShow] = useState(false);
@@ -14,7 +16,7 @@ const NavigationMenu = () => {
 	return (
 		<>
 			<Button className="MenuButton" onClick={handleShow}>
-				Menu
+				<BsList />
 			</Button>
 
 			<Offcanvas
@@ -25,7 +27,10 @@ const NavigationMenu = () => {
 				backdrop={false}
 			>
 				<Offcanvas.Header className="NavigationHeader" closeButton>
-					<Offcanvas.Title>Menu</Offcanvas.Title>
+					<Offcanvas.Title>
+						{" "}
+						<BsList style={{ "margin-bottom": "3px" }} /> Menu
+					</Offcanvas.Title>
 				</Offcanvas.Header>
 				<Offcanvas.Body>
 					<div className="d-grid gap-2">
@@ -33,6 +38,7 @@ const NavigationMenu = () => {
 						<NavigationItem link="#link2" text="Link 2" />
 						<NavigationItem link="#link3" text="Link 3" />
 					</div>
+					<NavigationProfile />
 				</Offcanvas.Body>
 			</Offcanvas>
 		</>

@@ -1,0 +1,35 @@
+.profile_section {
+	position: absolute;
+	bottom: 5vh;
+	margin-top: 3vh;
+	width: 90%;
+	text-align: center;
+	border-top-color: #3b3b3b83;
+	border-top-style: solid;
+	padding-top: 2vh;
+}
+
+.profile_button {
+	border-radius: 50%;
+	background-color: #1d1a1af3;
+	border-color: #1d1a1af3;
+}
+
+.profile_button:hover {
+	border-color: #4a154b;
+	background-color: #4a154b;
+}
+
+.profile_button:active {
+	border-color: #4a154b;
+	background-color: #4a154b;
+}
+.profile_button:focus {
+	border-color: #4a154b;
+	background-color: #4a154b;
+	box-shadow: none;
+}
+
+.gear_position {
+	margin: auto;
+}

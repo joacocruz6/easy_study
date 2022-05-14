@@ -1,21 +1,20 @@
 .MenuButton {
-	background-color: #ffffff;
-	color: #000000;
-	border-color: #000000;
+	background-color: #1d1a1af3;
+	color: #ffffff;
+	border-color: #131111f3;
 }
 
 .MenuButton:hover {
-	background-color: #000000;
+	background-color: #2b0b2c;
 	color: #ffffff;
-	border-color: #000000;
-	outline-color: #000000;
+	border-color: #2a0b2b;
 }
 
 .MenuButton:focus {
-	background-color: #ffffff;
-	color: #000000;
-	border-color: #000000;
-	outline-color: #000000;
+	background-color: #340e35;
+	color: #ffffff;
+	border-color: #2f0d30;
+	outline-color: #280a29;
 	box-shadow: none;
 }
 
