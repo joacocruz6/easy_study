@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TitleInput from "./TitleInput";
 import ContentInput from "./ContentInput";
+import CategoriesInput from "./CategoriesInput";
 
 const CreateForm = () => (
 	<>
@@ -13,6 +14,11 @@ const CreateForm = () => (
 				<Row className="g-4">
 					<Col>
 						<TitleInput />
+					</Col>
+				</Row>
+				<Row classame="g-4">
+					<Col>
+						<CategoriesInput />
 					</Col>
 				</Row>
 				<Row className="g-4">
