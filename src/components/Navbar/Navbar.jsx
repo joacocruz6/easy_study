@@ -10,6 +10,11 @@ const Navigation = () => {
 				<Container>
 					<NavigationMenu />
 					<Navbar.Toggle />
+					<Navbar.Collapse style={{ "padding-left": "27vw" }}>
+						<Navbar.Brand href="/">
+							<h4> EasyStudy </h4>
+						</Navbar.Brand>
+					</Navbar.Collapse>
 					<Navbar.Collapse className="justify-content-end">
 						<Navbar.Text>
 							Signed in as: <a href="#login">Mark Otto</a>

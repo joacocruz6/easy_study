@@ -1,0 +1,10 @@
+.create_form {
+	font-size: large;
+	text-align: left;
+}
+
+.create_button {
+	position: relative;
+	left: 63.5vw;
+	width: 90px;
+}
