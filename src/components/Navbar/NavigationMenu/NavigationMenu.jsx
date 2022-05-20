@@ -29,9 +29,12 @@ const ExercisesDropdown = () => {
 			</Button>
 			<Collapse in={open}>
 				<div className="collapse_div" id="execises-dropdown">
-					<DropdownItem link="/exercises" text="See all exercises" />
 					<DropdownItem
-						link="/create"
+						link="/exercises/all"
+						text="See all exercises"
+					/>
+					<DropdownItem
+						link="/exercises/create"
 						text="Create/Upload exercise"
 					/>
 					<DropdownItem

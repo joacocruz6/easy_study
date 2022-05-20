@@ -11,8 +11,10 @@ const Main = () => {
 		<div className="main">
 			<BrowserRouter>
 				<Routes>
-					<Route path="exercises" element={<ExerciseList />} />
-					<Route path="create" element={<CreateForm />} />
+					<Route path="exercises">
+						<Route path="create" element={<CreateForm />} />
+						<Route path="all" element={<ExerciseList />} />
+					</Route>
 				</Routes>
 			</BrowserRouter>
 		</div>
