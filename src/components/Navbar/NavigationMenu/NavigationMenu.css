@@ -26,3 +26,9 @@
 	background-color: #1d1a1af3;
 	color: #ffffff;
 }
+
+.collapse_div {
+	position: relative;
+	background-color: #1d1a1a9c;
+	border-radius: 10px;
+}

@@ -17,3 +17,18 @@
 	background-color: #4a154b;
 	box-shadow: none;
 }
+
+.active_navigation_button {
+	border-color: #4a154b;
+	background-color: #4a154b;
+}
+
+.active_navigation_button:active {
+	border-color: #4a154b;
+	background-color: #4a154b;
+}
+.active_navigation_button:focus {
+	border-color: #4a154b;
+	background-color: #4a154b;
+	box-shadow: none;
+}

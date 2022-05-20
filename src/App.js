@@ -4,10 +4,17 @@ import Navigation from "./components/Navbar/Navbar.jsx";
 import ExerciseList from "./components/Exercises/ExerciseList/ExerciseList";
 import CreateForm from "./components/CreateForm/CreateForm.jsx";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 const Main = () => {
 	return (
 		<div className="main">
-			<CreateForm />
+			<BrowserRouter>
+				<Routes>
+					<Route path="exercises" element={<ExerciseList />} />
+					<Route path="create" element={<CreateForm />} />
+				</Routes>
+			</BrowserRouter>
 		</div>
 	);
 };

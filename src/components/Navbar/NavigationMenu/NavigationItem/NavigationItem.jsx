@@ -6,7 +6,11 @@ import "./NavigationItem.css";
 const NavigationItem = (props) => {
 	return (
 		<>
-			<Button className="navigation_button" href={props.link}>
+			<Button
+				className="navigation_button"
+				href={props.link}
+				style={props.style}
+			>
 				{" "}
 				{props.text}{" "}
 			</Button>
