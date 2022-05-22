@@ -14,6 +14,7 @@ const ExerciseCard = () => {
 						make up the bulk of the card's content.
 					</Card.Text>
 					<Button
+						href="/exercises/abs"
 						className="ExerciseButton"
 						variant="primary"
 						style={{ margin: "4px" }}
