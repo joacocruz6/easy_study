@@ -2,7 +2,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import "./Navbar.css";
 import NavigationMenu from "./NavigationMenu/NavigationMenu.jsx";
-
+import NavigationLogout from "./NavigationMenu/NavigationLogout/NavigationLogout.jsx";
 const Navigation = () => {
 	return (
 		<>
@@ -20,6 +20,7 @@ const Navigation = () => {
 							Signed in as:{" "}
 							<span className="user_text">Mark Otto</span>
 						</Navbar.Text>
+						<NavigationLogout />
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
