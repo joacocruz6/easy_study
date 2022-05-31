@@ -1,57 +1,71 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import "./HomePage.css";
 
 const HomePage = () => (
 	<>
-		<Carousel>
-			<Carousel.Item>
-				<img
-					className="d-block w-100"
-					src="holder.js/800x400?text=First slide&bg=373940"
-					alt="First slide"
-				/>
-				<Carousel.Caption>
-					<h3>First slide label</h3>
-					<p>
-						Nulla vitae elit libero, a pharetra augue mollis
-						interdum.
-					</p>
-				</Carousel.Caption>
-			</Carousel.Item>
-			<Carousel.Item>
-				<img
-					className="d-block w-100"
-					src="holder.js/800x400?text=Second slide&bg=282c34"
-					alt="Second slide"
-				/>
+		<Container>
+			<Row xs={2} md={2} className="g-4">
+				<Col>
+					<Card className="card">
+						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
+						<Card.Body>
+							<Card.Title>See all exercises</Card.Title>
+							<Card.Text>
+								Here you can see all the exercises submitted,
+								filter them by title and categories.
+							</Card.Text>
+							<div className="text-center">
+								<Button href="/exercises/all">
+									See all exercises
+								</Button>
+							</div>
+						</Card.Body>
+					</Card>
+				</Col>
+				<Col>
+					<Card className="card">
+						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
+						<Card.Body>
+							<Card.Title>Create an exercise</Card.Title>
+							<Card.Text>
+								Here you can upload or create an exercise to the
+								repositorium system.
+							</Card.Text>
+							<div className="text-center">
+								<Button href="/exercises/create">
+									Create an exercise
+								</Button>
+							</div>
+						</Card.Body>
+					</Card>
+				</Col>
+			</Row>
 
-				<Carousel.Caption>
-					<h3>Second slide label</h3>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					</p>
-				</Carousel.Caption>
-			</Carousel.Item>
-			<Carousel.Item>
-				<img
-					className="d-block w-100"
-					src="holder.js/800x400?text=Third slide&bg=20232a"
-					alt="Third slide"
-				/>
-
-				<Carousel.Caption>
-					<h3>Third slide label</h3>
-					<p>
-						Praesent commodo cursus magna, vel scelerisque nisl
-						consectetur.
-					</p>
-				</Carousel.Caption>
-			</Carousel.Item>
-		</Carousel>
-		<Button href="/exercises/all">See all exercises.</Button>
-		<Button href="/exercises/all">Create an exercise</Button>
-		<Button href="/exercises/all">See my exercises created.</Button>
+			<Row xs={1} md={1} className="g-4">
+				<Col>
+					<Card className="card">
+						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
+						<Card.Body>
+							<Card.Title>See my exercises</Card.Title>
+							<Card.Text>
+								See the exercises that you have updated into the
+								system.
+							</Card.Text>
+							<div className="text-center">
+								<Button href="/exercises/my_exercises">
+									See my exercises created
+								</Button>
+							</div>
+						</Card.Body>
+					</Card>
+				</Col>
+			</Row>
+		</Container>
 	</>
 );
 
