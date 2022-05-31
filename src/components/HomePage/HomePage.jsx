@@ -46,7 +46,7 @@ const HomePage = () => (
 				</Col>
 			</Row>
 
-			<Row xs={1} md={1} className="g-4">
+			<Row xs={1} md={2} style={{ "margin-top": "10px" }} className="g-4">
 				<Col>
 					<Card className="card">
 						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
@@ -60,6 +60,20 @@ const HomePage = () => (
 								<Button href="/exercises/my_exercises">
 									See my exercises created
 								</Button>
+							</div>
+						</Card.Body>
+					</Card>
+				</Col>
+				<Col>
+					<Card className="card">
+						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
+						<Card.Body>
+							<Card.Title>Profile</Card.Title>
+							<Card.Text>
+								You can change and see your profile information.
+							</Card.Text>
+							<div className="text-center">
+								<Button>Change profile</Button>
 							</div>
 						</Card.Body>
 					</Card>
