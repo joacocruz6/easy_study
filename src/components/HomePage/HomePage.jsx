@@ -50,7 +50,8 @@ const HomePage = () => (
 			</Carousel.Item>
 		</Carousel>
 		<Button href="/exercises/all">See all exercises.</Button>
-		<Button href="/exercises/all">See all exercises.</Button>
+		<Button href="/exercises/all">Create an exercise</Button>
+		<Button href="/exercises/all">See my exercises created.</Button>
 	</>
 );
 
