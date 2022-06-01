@@ -9,7 +9,8 @@ import ExerciseDetail from "./components/ExerciseDetail/ExerciseDetail";
 import HomePage from "./components/HomePage/HomePage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import Profile from "./components/Profile/Profile";
-
+import ChangePasswordForm from "./components/ChangePasswordForm/ChangePasswordForm";
+import CreateAccountForm from "./components/CreateAccount/CreateAccount";
 const Main = () => {
 	return (
 		<div className="main">
@@ -27,6 +28,14 @@ const Main = () => {
 					</Route>
 					<Route path="login" element={<LoginPage />} />
 					<Route path="profile" element={<Profile />} />
+					<Route
+						path="change_password"
+						element={<ChangePasswordForm />}
+					/>
+					<Route
+						path="account/create"
+						element={<CreateAccountForm />}
+					/>
 				</Routes>
 			</BrowserRouter>
 		</div>

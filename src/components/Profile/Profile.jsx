@@ -40,7 +40,11 @@ const Profile = () => {
 		</>
 	);
 	const changePassword = (
-		<Button style={{ margin: "10px" }} variant="secondary">
+		<Button
+			href="/change_password"
+			style={{ margin: "10px" }}
+			variant="secondary"
+		>
 			Change Password
 		</Button>
 	);
