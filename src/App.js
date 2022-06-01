@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ExerciseDetail from "./components/ExerciseDetail/ExerciseDetail";
 import HomePage from "./components/HomePage/HomePage";
 import LoginPage from "./components/LoginPage/LoginPage";
+import Profile from "./components/Profile/Profile";
 
 const Main = () => {
 	return (
@@ -25,6 +26,7 @@ const Main = () => {
 						<Route path="my_exercises" element={<ExerciseList />} />
 					</Route>
 					<Route path="login" element={<LoginPage />} />
+					<Route path="profile" element={<Profile />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

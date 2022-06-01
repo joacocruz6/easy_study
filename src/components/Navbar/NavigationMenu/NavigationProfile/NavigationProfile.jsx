@@ -22,7 +22,11 @@ const NavigationProfile = () => {
 					delay={{ show: 250, hide: 400 }}
 					overlay={renderTooltip}
 				>
-					<Button className="profile_button" variant="secondary">
+					<Button
+						href="/profile"
+						className="profile_button"
+						variant="secondary"
+					>
 						<BsFillGearFill className="gear_position" />
 					</Button>
 				</OverlayTrigger>
