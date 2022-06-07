@@ -5,7 +5,7 @@ import ExerciseCol from "../ExerciseCol/ExerciseCol";
 const ExerciseRow = () => {
 	return (
 		<>
-			<Row className="g-4" style={{ margin: "10px" }}>
+			<Row xs={2} md={3} className="g-4" style={{ margin: "10px" }}>
 				<ExerciseCol />
 				<ExerciseCol />
 				<ExerciseCol />

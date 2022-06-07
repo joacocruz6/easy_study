@@ -1,5 +1,6 @@
 .ExerciseCard {
 	font-size: large;
+	width: 20vw !important;
 }
 
 .ExerciseCard:hover {
