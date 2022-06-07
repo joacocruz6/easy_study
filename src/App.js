@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/Navbar/Navbar.jsx";
@@ -15,6 +16,8 @@ import AnonymousLanding from "./components/AnonymousLanding/AnonymousLanding";
 
 const Main = (props) => {
 	const isAuthenticated = props.isAuthenticated;
+	const setIsAuthenticated = props.setIsAuthenticated;
+
 	let routes = (
 		<>
 			<Route path="/" element={<AnonymousLanding />}></Route>
@@ -50,11 +53,17 @@ const Main = (props) => {
 };
 
 function App() {
-	const isAuthenticated = false;
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
 	return (
 		<div className="App">
-			<Navigation isAuthenticated={isAuthenticated} />
-			<Main isAuthenticated={isAuthenticated} />
+			<Navigation
+				isAuthenticated={isAuthenticated}
+				setIsAuthenticated={setIsAuthenticated}
+			/>
+			<Main
+				isAuthenticated={isAuthenticated}
+				setIsAuthenticated={setIsAuthenticated}
+			/>
 		</div>
 	);
 }
