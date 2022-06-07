@@ -1,0 +1,17 @@
+.menu_button {
+	background-color: #1d1a1af3;
+	color: #ffffff;
+	border-color: #131111f3;
+}
+.menu_button:hover {
+	background-color: #2b0b2c;
+	color: #ffffff;
+	border-color: #2a0b2b;
+}
+.menu_button:focus {
+	background-color: #340e35;
+	color: #ffffff;
+	border-color: #2f0d30;
+	outline-color: #280a29;
+	box-shadow: none;
+}
