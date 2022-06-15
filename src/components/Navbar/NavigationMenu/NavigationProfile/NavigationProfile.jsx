@@ -12,7 +12,8 @@ const renderTooltip = (props) => (
 	</Tooltip>
 );
 
-const NavigationProfile = () => {
+const NavigationProfile = (props) => {
+	const logout = props.logout;
 	return (
 		<div className="profile_section">
 			<span>Mark Otto</span>
@@ -30,7 +31,7 @@ const NavigationProfile = () => {
 						<BsFillGearFill className="gear_position" />
 					</Button>
 				</OverlayTrigger>
-				<NavigationLogout />
+				<NavigationLogout logout={logout} />
 			</div>
 		</div>
 	);

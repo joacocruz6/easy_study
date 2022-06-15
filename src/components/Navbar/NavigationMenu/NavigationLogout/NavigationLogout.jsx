@@ -11,14 +11,19 @@ const renderTooltip = (props) => (
 	</Tooltip>
 );
 
-const NavigationLogout = () => {
+const NavigationLogout = (props) => {
+	const logout = props.logout;
 	return (
 		<OverlayTrigger
 			placement="bottom"
 			delay={{ show: 250, hide: 400 }}
 			overlay={renderTooltip}
 		>
-			<Button className="logout_button" variant="secondary">
+			<Button
+				className="logout_button"
+				variant="secondary"
+				onClick={logout}
+			>
 				<BsBoxArrowUpRight />
 			</Button>
 		</OverlayTrigger>

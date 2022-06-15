@@ -8,13 +8,14 @@ import NavigationRegister from "./NavigationMenu/NavigationRegister/NavigationRe
 
 const NavbarProfile = (props) => {
 	const isAuthenticated = props.isAuthenticated;
+	const logout = props.logout;
 	if (isAuthenticated) {
 		return (
 			<>
 				<Navbar.Text>
 					Signed in as: <span className="user_text">Mark Otto</span>
 				</Navbar.Text>
-				<NavigationLogout />
+				<NavigationLogout logout={logout} />
 			</>
 		);
 	}
@@ -28,7 +29,8 @@ const NavbarProfile = (props) => {
 
 const Navigation = (props) => {
 	const isAuthenticated = props.isAuthenticated;
-	const menu = isAuthenticated ? <NavigationMenu /> : "";
+	const logout = props.logout;
+	const menu = isAuthenticated ? <NavigationMenu logout={logout} /> : "";
 
 	return (
 		<>
@@ -42,7 +44,10 @@ const Navigation = (props) => {
 						</Navbar.Brand>
 					</Navbar.Collapse>
 					<Navbar.Collapse className="justify-content-end">
-						<NavbarProfile isAuthenticated={isAuthenticated} />
+						<NavbarProfile
+							isAuthenticated={isAuthenticated}
+							logout={logout}
+						/>
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>

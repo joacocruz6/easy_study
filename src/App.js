@@ -16,13 +16,17 @@ import AnonymousLanding from "./components/AnonymousLanding/AnonymousLanding";
 
 const Main = (props) => {
 	const isAuthenticated = props.isAuthenticated;
-	const setIsAuthenticated = props.setIsAuthenticated;
+	const authenticate = props.authenticate;
+	const logout = props.logout;
 
 	let routes = (
 		<>
 			<Route path="/" element={<AnonymousLanding />}></Route>
 			<Route path="account/create" element={<CreateAccountForm />} />
-			<Route path="login" element={<LoginPage />} />
+			<Route
+				path="login"
+				element={<LoginPage authenticate={authenticate} />}
+			/>
 		</>
 	);
 	if (isAuthenticated) {
@@ -53,16 +57,23 @@ const Main = (props) => {
 };
 
 function App() {
-	const [isAuthenticated, setIsAuthenticated] = useState(false);
+	const haveAuthToken = localStorage.getItem("token") !== null;
+	const [isAuthenticated, setIsAuthenticated] = useState(haveAuthToken);
+	const authenticate = () => {
+		localStorage.setItem("token", "Waky token");
+		setIsAuthenticated(true);
+	};
+	const logout = () => {
+		setIsAuthenticated(false);
+		localStorage.removeItem("token");
+	};
 	return (
 		<div className="App">
-			<Navigation
-				isAuthenticated={isAuthenticated}
-				setIsAuthenticated={setIsAuthenticated}
-			/>
+			<Navigation isAuthenticated={isAuthenticated} logout={logout} />
 			<Main
 				isAuthenticated={isAuthenticated}
-				setIsAuthenticated={setIsAuthenticated}
+				authenticate={authenticate}
+				logout={logout}
 			/>
 		</div>
 	);

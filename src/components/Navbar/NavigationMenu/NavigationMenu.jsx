@@ -47,7 +47,8 @@ const ExercisesDropdown = () => {
 	);
 };
 
-const NavigationMenu = () => {
+const NavigationMenu = (props) => {
+	const logout = props.logout;
 	const [show, setShow] = useState(false);
 
 	const handleClose = () => setShow(false);
@@ -77,7 +78,7 @@ const NavigationMenu = () => {
 						<NavigationItem link="/" text="Home" />
 						<ExercisesDropdown />
 					</div>
-					<NavigationProfile />
+					<NavigationProfile logout={logout} />
 				</Offcanvas.Body>
 			</Offcanvas>
 		</>

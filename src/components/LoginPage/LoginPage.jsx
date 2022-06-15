@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import "./LoginPage.css";
 
 const LoginPage = (props) => {
+	const authenticate = props.authenticate;
 	return (
 		<>
 			<Card className="login_card">
@@ -30,6 +31,7 @@ const LoginPage = (props) => {
 						variant="secondary"
 						type="submit"
 						className="login_button"
+						onClick={authenticate}
 					>
 						Log in
 					</Button>
