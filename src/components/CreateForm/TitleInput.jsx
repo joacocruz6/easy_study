@@ -5,7 +5,7 @@ const TitleInput = () => (
 	<>
 		<Form.Group className="mb-3" controlId="formTitle">
 			<Form.Label>Title</Form.Label>
-			<Form.Control type="input" placeholde="Titulo de Ejemplo" />
+			<Form.Control type="input" placeholder="Titulo de Ejemplo" />
 		</Form.Group>
 	</>
 );
