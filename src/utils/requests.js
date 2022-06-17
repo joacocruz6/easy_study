@@ -1,5 +1,5 @@
 const request = (endpoint, config) => {
-	let url = [process.env.BACKEND_URL, endpoint].join("");
+	let url = [process.env.REACT_APP_BACKEND_URL, endpoint].join("");
 	return fetch(url, config);
 };
 

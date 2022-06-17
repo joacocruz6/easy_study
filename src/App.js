@@ -13,6 +13,7 @@ import Profile from "./components/Profile/Profile";
 import ChangePasswordForm from "./components/ChangePasswordForm/ChangePasswordForm";
 import CreateAccountForm from "./components/CreateAccount/CreateAccount";
 import AnonymousLanding from "./components/AnonymousLanding/AnonymousLanding";
+import requests from "./utils/requests";
 
 const Main = (props) => {
 	const isAuthenticated = props.isAuthenticated;
@@ -59,13 +60,43 @@ const Main = (props) => {
 function App() {
 	const haveAuthToken = localStorage.getItem("token") !== null;
 	const [isAuthenticated, setIsAuthenticated] = useState(haveAuthToken);
-	const authenticate = () => {
-		localStorage.setItem("token", "Waky token");
-		setIsAuthenticated(true);
+	const authenticate = (event, userEmail, userPassword) => {
+		event.preventDefault();
+		const endpoint = "/api/v100/auth/login/";
+		const config = {
+			mode: "cors",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		};
+		const data = {
+			email: userEmail,
+			password: userPassword,
+		};
+		requests
+			.post(endpoint, config, data)
+			.then((response) => response.json())
+			.then((data) => {
+				const token = data["auth_token"];
+				localStorage.setItem("token", token);
+				setIsAuthenticated(true);
+				document.location = "/";
+			});
 	};
 	const logout = () => {
-		setIsAuthenticated(false);
-		localStorage.removeItem("token");
+		const endpoint = "/api/v100/auth/logout";
+		const token = localStorage.getItem("token");
+		const config = {
+			mode: "cors",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Token ${token}`,
+			},
+		};
+		requests.post(endpoint, config, {}).then((response) => {
+			localStorage.removeItem("token");
+			setIsAuthenticated(false);
+		});
 	};
 	return (
 		<div className="App">
