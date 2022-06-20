@@ -31,7 +31,10 @@ const Main = (props) => {
 					element={
 						<Message
 							type="success"
-							content="Account created successfully!"
+							content={[
+								"Account created successfully! Please go to ",
+								<a href="/login/">login</a>,
+							]}
 						/>
 					}
 				/>

@@ -5,13 +5,15 @@ import Form from "react-bootstrap/Form";
 import CardForm from "../CardForm/CardForm";
 import handleInput from "../../utils/handleInput";
 import requests from "../../utils/requests";
+import Message from "../Messages/Message";
 
 const CreateAccountForm = () => {
 	const [email, setEmail] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [password, setPassword] = useState("");
-
+	const [errors, setErrors] = useState([]);
+	const errorDismiss = () => setErrors([]);
 	const submit = (event) => {
 		event.preventDefault();
 		const endpoint = "/api/v100/user/create/";
@@ -21,6 +23,23 @@ const CreateAccountForm = () => {
 				"Content-Type": "application/json",
 			},
 		};
+		let errors = [];
+		if (email.trim() === "") {
+			errors.push("Missing the email address");
+		}
+		if (firstName.trim() === "") {
+			errors.push("Missing the first name of the user");
+		}
+		if (lastName.trim() === "") {
+			errors.push("Missing the last name of the user");
+		}
+		if (password.trim() === "") {
+			errors.push("Enter a valid password");
+		}
+		if (errors.length > 0) {
+			setErrors(errors);
+			return;
+		}
 		const data = {
 			email: email,
 			first_name: firstName,
@@ -29,8 +48,20 @@ const CreateAccountForm = () => {
 		};
 		requests
 			.post(endpoint, config, data)
-			.then((response) => response.json())
-			.then((data) => console.log(data));
+			.then((response) => {
+				if (response.ok) {
+					return response.json();
+				}
+				throw new Error("Something went wrong");
+			})
+			.then((data) => {
+				document.location = "/account/success/";
+			})
+			.catch((error) =>
+				setErrors([
+					"There was an error processing the form, check if the data is ok or you don't have a previous user created.",
+				])
+			);
 	};
 
 	const title = "Create Account";
@@ -87,12 +118,26 @@ const CreateAccountForm = () => {
 		</>
 	);
 	return (
-		<CardForm
-			cardTitle={title}
-			inputs={[emailInput, firstNameInput, lastNameInput, passwordInput]}
-			saveButton={submitButton}
-			onSubmit={submit}
-		/>
+		<>
+			{errors.map((error) => (
+				<Message
+					type="danger"
+					content={error}
+					onDismiss={errorDismiss}
+				/>
+			))}
+			<CardForm
+				cardTitle={title}
+				inputs={[
+					emailInput,
+					firstNameInput,
+					lastNameInput,
+					passwordInput,
+				]}
+				saveButton={submitButton}
+				onSubmit={submit}
+			/>
+		</>
 	);
 };
 

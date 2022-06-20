@@ -8,16 +8,23 @@ const Message = (props) => {
 	const content = props.content;
 	const extra = props.extraData === null ? "" : props.extraData;
 	const [show, setShow] = useState(true);
+	let dismiss = () => setShow(false);
+	if (props.onDismiss) {
+		dismiss = () => {
+			props.onDismiss();
+			setShow(false);
+		};
+	}
 	if (show) {
 		return (
 			<>
 				<Alert
 					className="message"
 					variant={type}
-					onClose={() => setShow(false)}
+					onClose={dismiss}
 					dismissible
 				>
-					<p>{content}</p>
+					<p>{content.map((element) => element)}</p>
 				</Alert>
 				{extra}
 			</>
