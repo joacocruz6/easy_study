@@ -1,12 +1,20 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import ExerciseCard from "../ExerciseCard/ExerciseCard.jsx";
-import LoadingExerciseCard from "../ExerciseCard/LoadingExerciseCard.jsx";
-const ExerciseCol = () => {
+
+const ExerciseCol = (props) => {
+	const title = props.title;
+	const description = props.description;
+	const uuid = props.uuid;
+
 	return (
 		<>
 			<Col>
-				<ExerciseCard />
+				<ExerciseCard
+					description={description}
+					title={title}
+					uuid={uuid}
+				/>
 			</Col>
 		</>
 	);

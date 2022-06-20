@@ -4,7 +4,6 @@ const request = (endpoint, config) => {
 };
 
 const getRequest = (endpoint, config) => {
-	config["method"] = "GET";
 	return request(endpoint, config);
 };
 

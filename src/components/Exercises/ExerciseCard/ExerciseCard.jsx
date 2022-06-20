@@ -3,18 +3,21 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "./ExerciseCard.css";
 
-const ExerciseCard = () => {
+const ExerciseCard = (props) => {
+	const description = props.description;
+	const title = props.title;
+	const uuid = props.uuid;
+	const buttonHref = `/exercises/${uuid}`;
 	return (
 		<>
 			<Card className="ExerciseCard">
 				<Card.Body>
-					<Card.Title>Card Title</Card.Title>
+					<Card.Title>{title}</Card.Title>
 					<Card.Text style={{ "text-align": "left" }}>
-						Some quick example text to build on the card title and
-						make up the bulk of the card's content.
+						{description}
 					</Card.Text>
 					<Button
-						href="/exercises/abs"
+						href={buttonHref}
 						className="ExerciseButton"
 						variant="primary"
 						style={{ margin: "4px" }}
