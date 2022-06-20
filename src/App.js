@@ -14,6 +14,7 @@ import ChangePasswordForm from "./components/ChangePasswordForm/ChangePasswordFo
 import CreateAccountForm from "./components/CreateAccount/CreateAccount";
 import AnonymousLanding from "./components/AnonymousLanding/AnonymousLanding";
 import requests from "./utils/requests";
+import Message from "./components/Messages/Message";
 
 const Main = (props) => {
 	const isAuthenticated = props.isAuthenticated;
@@ -23,7 +24,18 @@ const Main = (props) => {
 	let routes = (
 		<>
 			<Route path="/" element={<AnonymousLanding />}></Route>
-			<Route path="account/create" element={<CreateAccountForm />} />
+			<Route path="account">
+				<Route path="create" element={<CreateAccountForm />} />
+				<Route
+					path="success"
+					element={
+						<Message
+							type="success"
+							content="Account created successfully!"
+						/>
+					}
+				/>
+			</Route>
 			<Route
 				path="login"
 				element={<LoginPage authenticate={authenticate} />}

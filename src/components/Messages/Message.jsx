@@ -1,25 +1,29 @@
 import React from "react";
 import { useState } from "react";
 import Alert from "react-bootstrap/Alert";
+import "./message.css";
 
-const dismissableAlert = (props) => {
-	const alertType = props.alertType;
-	const alertMessage = props.message;
+const Message = (props) => {
+	const type = props.type;
+	const content = props.content;
+	const extra = props.extraData === null ? "" : props.extraData;
 	const [show, setShow] = useState(true);
 	if (show) {
 		return (
 			<>
 				<Alert
-					variant={alertType}
+					className="message"
+					variant={type}
 					onClose={() => setShow(false)}
 					dismissible
 				>
-					<p>{alertMessage}</p>
+					<p>{content}</p>
 				</Alert>
+				{extra}
 			</>
 		);
 	}
 	return <></>;
 };
 
-export default dismissableAlert;
+export default Message;
