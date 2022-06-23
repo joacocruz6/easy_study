@@ -51,7 +51,12 @@ const Profile = () => {
 		requests
 			.request(endpoint, config)
 			.then((response) => response.json())
-			.then((data) => console.log(data));
+			.then((data) =>
+				localStorage.setItem(
+					"user_name",
+					`${data["first_name"]} ${data["last_name"]}`
+				)
+			);
 	};
 
 	const title = isLoading ? (
