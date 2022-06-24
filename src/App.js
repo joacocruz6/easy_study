@@ -50,9 +50,19 @@ const Main = (props) => {
 				<Route path="/" element={<HomePage />} />
 				<Route path="exercises">
 					<Route path="create" element={<CreateForm />} />
-					<Route path="all" element={<ExerciseList />} />
+					<Route
+						path="all"
+						element={
+							<ExerciseList endpoint="/api/v100/learning_object/" />
+						}
+					/>
 					<Route path=":exercise_uuid" element={<ExerciseDetail />} />
-					<Route path="my_exercises" element={<ExerciseList />} />
+					<Route
+						path="my_exercises"
+						element={
+							<ExerciseList endpoint="/api/v100/learning_object/my_learning_objects/" />
+						}
+					/>
 				</Route>
 				<Route path="profile" element={<Profile />} />
 				<Route

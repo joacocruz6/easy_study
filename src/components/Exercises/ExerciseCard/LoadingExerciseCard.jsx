@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import Placeholder from "react-bootstrap/Placeholder";
 import "./ExerciseCard.css";
 
@@ -13,7 +12,7 @@ const LoadingExerciseCard = () => {
 						<Placeholder xs={6} />
 					</Placeholder>
 					<Placeholder
-						style={{ "text-align": "left" }}
+						style={{ textAlign: "left" }}
 						as={Card.Text}
 						animation="glow"
 					>

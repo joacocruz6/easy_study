@@ -73,7 +73,7 @@ const HomePage = () => (
 								You can change and see your profile information.
 							</Card.Text>
 							<div className="text-center">
-								<Button>Change profile</Button>
+								<Button href="/profile">Change profile</Button>
 							</div>
 						</Card.Body>
 					</Card>

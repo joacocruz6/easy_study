@@ -13,7 +13,7 @@ const ExerciseCard = (props) => {
 			<Card className="ExerciseCard">
 				<Card.Body>
 					<Card.Title>{title}</Card.Title>
-					<Card.Text style={{ "text-align": "left" }}>
+					<Card.Text style={{ textAlign: "left" }}>
 						{description}
 					</Card.Text>
 					<Button
