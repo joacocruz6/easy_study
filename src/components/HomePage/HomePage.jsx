@@ -46,7 +46,7 @@ const HomePage = () => (
 				</Col>
 			</Row>
 
-			<Row xs={1} md={2} style={{ "margin-top": "10px" }} className="g-4">
+			<Row xs={1} md={2} style={{ marginTop: "10px" }} className="g-4">
 				<Col>
 					<Card className="card">
 						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}

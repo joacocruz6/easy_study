@@ -16,8 +16,8 @@ const NavigationProfile = (props) => {
 	const logout = props.logout;
 	return (
 		<div className="profile_section">
-			<span>Mark Otto</span>
-			<div style={{ "margin-top": "10px" }}>
+			<span>{localStorage.getItem("user_name")}</span>
+			<div style={{ marginTop: "10px" }}>
 				<OverlayTrigger
 					placement="bottom"
 					delay={{ show: 250, hide: 400 }}

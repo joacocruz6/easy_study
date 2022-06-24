@@ -38,7 +38,7 @@ const ExercisesDropdown = () => {
 						text="Create/Upload exercise"
 					/>
 					<DropdownItem
-						link="#my-exercises"
+						link="/exercises/my_exercises"
 						text="See my exercises created/uploaded"
 					/>
 				</div>
@@ -70,7 +70,7 @@ const NavigationMenu = (props) => {
 				<Offcanvas.Header className="NavigationHeader" closeButton>
 					<Offcanvas.Title>
 						{" "}
-						<BsList style={{ "margin-bottom": "3px" }} /> Menu
+						<BsList style={{ marginBottom: "3px" }} /> Menu
 					</Offcanvas.Title>
 				</Offcanvas.Header>
 				<Offcanvas.Body>

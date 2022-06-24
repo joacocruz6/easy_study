@@ -19,7 +19,6 @@ import Message from "./components/Messages/Message";
 const Main = (props) => {
 	const isAuthenticated = props.isAuthenticated;
 	const authenticate = props.authenticate;
-	const logout = props.logout;
 
 	let routes = (
 		<>

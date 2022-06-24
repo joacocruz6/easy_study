@@ -59,7 +59,7 @@ const Navigation = (props) => {
 				<Container>
 					{menu}
 					<Navbar.Toggle />
-					<Navbar.Collapse style={{ "padding-left": "27vw" }}>
+					<Navbar.Collapse style={{ paddingLeft: "27vw" }}>
 						<Navbar.Brand href="/">
 							<h4> EasyStudy </h4>
 						</Navbar.Brand>

@@ -24,7 +24,7 @@ const DetailSection = (props) => {
 	);
 };
 
-const ExerciseDetail = (props) => {
+const ExerciseDetail = () => {
 	const defaultActiveKey = ["0", "1"];
 	const { exercise_uuid } = useParams();
 	const [title, setTitle] = useState("");
