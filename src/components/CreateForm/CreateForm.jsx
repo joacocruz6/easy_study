@@ -19,6 +19,7 @@ const CreateForm = () => {
 	const [categoryOptions, setCategoryOptions] = useState([]);
 	const [hasNextPage, setHasNextPage] = useState(true);
 	const [pageNumber, setPageNumber] = useState(1);
+	const [isLoadingCategories, setIsLoadingCategories] = useState(true);
 
 	const loadCategoryOptions = () => {
 		const searchParams = new URLSearchParams({ page_number: pageNumber });
@@ -30,32 +31,49 @@ const CreateForm = () => {
 			},
 		};
 		if (hasNextPage) {
+			setIsLoadingCategories(true);
 			requests
 				.get(endpoint, config)
 				.then((response) => response.json())
 				.then((data) => {
 					let categoriesNames = categoryOptions;
 					data["categories"].forEach((category) =>
-						categoriesNames.push(category["name"])
+						categoriesNames.push({
+							value: category["name"],
+							label: category["name"],
+						})
 					);
+					setHasNextPage(data["has_next_page"]);
 					if (data["has_next_page"]) {
-						setHasNextPage(data["has_next_page"]);
 						setPageNumber(pageNumber + 1);
 					}
 					setCategoryOptions(categoriesNames);
+					setIsLoadingCategories(false);
 				});
 		}
 	};
 	const onSubmit = (event) => {
 		event.preventDefault();
+		const categoryData = categories.map((category) => category.value);
 		const data = {
 			title: title,
 			description: description,
-			categories: categories,
+			categories: categoryData,
 			content: content,
 			system_uuid: process.env.REACT_APP_SYSTEM_UUID,
 		};
-		console.log(data);
+		const config = {
+			mode: "cors",
+			headers: {
+				Authorization: `Token ${localStorage.getItem("token")}`,
+				"Content-Type": "application/json",
+			},
+		};
+		const endpoint = "/api/v100/learning_object/";
+		requests
+			.post(endpoint, config, data)
+			.then((response) => response.json())
+			.then((data) => console.log(data));
 	};
 	useEffect(loadCategoryOptions, []);
 
@@ -66,7 +84,12 @@ const CreateForm = () => {
 					<Card.Title>Create/Upload Exercises</Card.Title>
 					<Form className="create_form" onSubmit={onSubmit}>
 						<TitleInput onChange={setTitle} />
-						<CategoriesInput />
+						<CategoriesInput
+							onChangeHandle={setCategories}
+							categoriesLoad={loadCategoryOptions}
+							categoryOptions={categoryOptions}
+							isLoading={isLoadingCategories}
+						/>
 						<ContentInput
 							label="Description"
 							rows={5}
