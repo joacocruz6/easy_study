@@ -1,0 +1,34 @@
+.navigation_button {
+	background-color: #1d1a1af3;
+	border-color: #1d1a1af3;
+}
+
+.navigation_button:hover {
+	border-color: #4a154b;
+	background-color: #4a154b;
+}
+
+.navigation_button:active {
+	border-color: #4a154b;
+	background-color: #4a154b;
+}
+.navigation_button:focus {
+	border-color: #4a154b;
+	background-color: #4a154b;
+	box-shadow: none;
+}
+
+.active_navigation_button {
+	border-color: #4a154b;
+	background-color: #4a154b;
+}
+
+.active_navigation_button:active {
+	border-color: #4a154b;
+	background-color: #4a154b;
+}
+.active_navigation_button:focus {
+	border-color: #4a154b;
+	background-color: #4a154b;
+	box-shadow: none;
+}

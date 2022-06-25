@@ -1,0 +1,38 @@
+.card {
+	width: 60vw;
+	font-size: large;
+	text-align: left;
+}
+
+.accordion-item {
+	margin-bottom: 10px;
+}
+
+.card-footer {
+	font-size: small;
+}
+
+.card-left-footer {
+	float: left;
+	text-align: left;
+	width: 33.3%;
+}
+
+.card-center-footer {
+	float: left;
+	text-align: center;
+	width: 33.4%;
+}
+
+.card-right-footer {
+	float: right;
+	text-align: right;
+	width: 33.3%;
+}
+
+.button {
+	margin: 5px;
+}
+.button-right {
+	float: right;
+}

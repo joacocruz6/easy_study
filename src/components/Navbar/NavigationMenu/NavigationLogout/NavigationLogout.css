@@ -1,0 +1,21 @@
+.logout_button {
+	border-radius: 50%;
+	background-color: #1d1a1af3;
+	border-color: #1d1a1af3;
+	margin-left: 10px;
+}
+
+.logout_button:hover {
+	border-color: #700808;
+	background-color: #700808;
+}
+
+.logout_button:active {
+	border-color: #700808;
+	background-color: #700808;
+}
+.logout_button:focus {
+	border-color: #700808;
+	background-color: #700808;
+	box-shadow: none;
+}

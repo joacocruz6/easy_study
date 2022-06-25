@@ -1,0 +1,13 @@
+.create_form {
+	font-size: large;
+	text-align: left;
+}
+
+.create_card {
+	width: 60vw;
+	margin: 30px !important;
+}
+
+.create_button {
+	margin-top: 10px;
+}
