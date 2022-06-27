@@ -20,7 +20,37 @@ const CreateForm = () => {
 	const [hasNextPage, setHasNextPage] = useState(true);
 	const [pageNumber, setPageNumber] = useState(1);
 	const [isLoadingCategories, setIsLoadingCategories] = useState(true);
+	const [files, setFiles] = useState({ 0: null });
+	const [count, setCount] = useState(1);
+	const [filesKeys, setFilesKeys] = useState(Object.keys(files));
+	const maxCount = 2;
+	const addFileHandler = () => {
+		if (Object.keys(files).length > maxCount) return;
+		files[count] = null;
+		filesKeys.push(count.toString());
+		setFiles(files);
+		setCount(count + 1);
+		setFilesKeys(filesKeys);
+		console.log(files);
+		console.log(filesKeys);
+	};
+	const dismissFileHandlerFactory = (key) => {
+		return () => {
+			delete files[key];
+			setFiles(files);
+			setFilesKeys(Object.keys(files));
+			console.log(files);
+			console.log(filesKeys);
+		};
+	};
 
+	const handleInputChange = (key) => {
+		return (event) => {
+			files[key] = event.target.files[0];
+			setFiles(files);
+			console.log(files);
+		};
+	};
 	const loadCategoryOptions = () => {
 		const searchParams = new URLSearchParams({ page_number: pageNumber });
 		const endpoint = "/api/v100/category/?" + searchParams.toString();
@@ -54,6 +84,11 @@ const CreateForm = () => {
 	};
 	const onSubmit = (event) => {
 		event.preventDefault();
+		const filesToSubmit = [];
+		Object.keys(files).forEach((value) => {
+			if (files[value]) filesToSubmit.push(files[value]);
+		});
+		console.log(filesToSubmit);
 		const categoryData = categories.map((category) => category.value);
 		const data = {
 			title: title,
@@ -102,7 +137,14 @@ const CreateForm = () => {
 							controlId="content-area"
 							onChange={setContent}
 						/>
-						<FileInput />
+						<FileInput
+							files={files}
+							inputChange={handleInputChange}
+							setFiles={setFiles}
+							addFile={addFileHandler}
+							fileKeys={filesKeys}
+							dismissGenerator={dismissFileHandlerFactory}
+						/>
 						<div>
 							<Button
 								type="submit"
