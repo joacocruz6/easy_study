@@ -5,6 +5,7 @@ import requests from "../../../utils/requests";
 import "./ExerciseCard.css";
 
 const ExerciseCard = (props) => {
+	const date = new Date(props.date).toDateString();
 	const description = props.description;
 	const title = props.title;
 	const uuid = props.uuid;
@@ -40,7 +41,7 @@ const ExerciseCard = (props) => {
 						Check the content!
 					</Button>
 				</Card.Body>
-				<Card.Footer className="text-muted">2 days ago</Card.Footer>
+				<Card.Footer className="text-muted">{date}</Card.Footer>
 			</Card>
 		</>
 	);
