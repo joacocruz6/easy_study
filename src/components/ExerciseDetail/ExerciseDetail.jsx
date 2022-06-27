@@ -36,7 +36,7 @@ const ExerciseDetail = () => {
 	const [system, setSystem] = useState("");
 	const [isLoading, setIsLoading] = useState(true);
 	const [filesUUIDS, setFilesUUIDS] = useState([]);
-
+	const [selectCreated, setSelectCreated] = useState(false);
 	useEffect(() => {
 		const url = `/api/v100/learning_object/${exercise_uuid}`;
 		const config = {
@@ -68,6 +68,21 @@ const ExerciseDetail = () => {
 				setFilesUUIDS(data.files);
 			})
 			.catch((error) => console.log(error));
+	}, []);
+
+	useEffect(() => {
+		if (!selectCreated) {
+			const selectURL = `/api/v100/learning_object/${exercise_uuid}/select/`;
+			const selectConfig = {
+				mode: "cors",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: localStorage.getItem("token"),
+				},
+			};
+			const selectData = {};
+			requests.post(selectURL, selectConfig, selectData);
+		}
 	}, []);
 
 	const header = isLoading ? (

@@ -33,7 +33,7 @@ const ExerciseCard = (props) => {
 						{description}
 					</Card.Text>
 					<Button
-						onClick={buttonOnClick}
+						href={buttonHref}
 						className="ExerciseButton"
 						variant="primary"
 						style={{ margin: "4px" }}
