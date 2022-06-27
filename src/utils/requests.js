@@ -13,7 +13,14 @@ const postRequest = (endpoint, config, data) => {
 	return request(endpoint, config);
 };
 
-const postFileRequest = () => {};
+const postFileRequest = (endpoint, config, file) => {
+	config["method"] = "POST";
+	config["headers"][
+		"Content-Disposition"
+	] = `attachment; filename=${file.name}`;
+	config["body"] = file;
+	return request(endpoint, config);
+};
 
 const requests = {
 	request: request,

@@ -108,7 +108,24 @@ const CreateForm = () => {
 		requests
 			.post(endpoint, config, data)
 			.then((response) => response.json())
-			.then((data) => console.log(data));
+			.then((data) => {
+				const uuid = data.uuid;
+				const filesUpload = [];
+				const filesEndpoint = `/api/v100/learning_object/files/${uuid}`;
+				const config = {
+					headers: {
+						Authorization: `Token ${localStorage.getItem("token")}`,
+					},
+				};
+				filesToSubmit.forEach((file) => {
+					filesUpload.push(
+						requests.postFile(filesEndpoint, config, file)
+					);
+				});
+				Promise.all(filesUpload).then(
+					(values) => (document.location.href = `/exercises/${uuid}`)
+				);
+			});
 	};
 	useEffect(loadCategoryOptions, []);
 
