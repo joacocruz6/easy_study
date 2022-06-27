@@ -6,7 +6,7 @@ import Placeholder from "react-bootstrap/Placeholder";
 import Badge from "react-bootstrap/Badge";
 import "./ExerciseDetail.css";
 import { Button } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useLinkClickHandler, useParams } from "react-router-dom";
 import requests from "../../utils/requests";
 
 const DetailSection = (props) => {
@@ -35,6 +35,7 @@ const ExerciseDetail = () => {
 	const [date, setDate] = useState("");
 	const [system, setSystem] = useState("");
 	const [isLoading, setIsLoading] = useState(true);
+	const [filesUUIDS, setFilesUUIDS] = useState([]);
 
 	useEffect(() => {
 		const url = `/api/v100/learning_object/${exercise_uuid}`;
@@ -45,11 +46,13 @@ const ExerciseDetail = () => {
 		};
 		requests
 			.get(url, config)
-			.then((response) =>
-				response.ok ? response.json() : new Error("Server error")
-			)
+			.then((response) => {
+				if (response.ok) return response.json();
+				throw new Error("Something in the server went wrong!");
+			})
 			.then((data) => {
 				let categories = [];
+				console.log(data);
 				setTitle(data.title);
 				data.categories.forEach((category) =>
 					categories.push(category.name)
@@ -62,6 +65,7 @@ const ExerciseDetail = () => {
 				setDate(date.toDateString());
 				setSystem(data.system);
 				setIsLoading(false);
+				setFilesUUIDS(data.files);
 			})
 			.catch((error) => console.log(error));
 	}, []);
@@ -132,16 +136,55 @@ const ExerciseDetail = () => {
 	) : (
 		system
 	);
-
-	const downloadButton = isLoading ? (
-		<Placeholder animation="glow">
-			<Placeholder.Button className="button" variant="success" xs={2} />
-		</Placeholder>
-	) : (
-		<Button className="button" variant="success">
-			Download
-		</Button>
+	let downloadButton = (
+		<>
+			<Placeholder animation="glow">
+				<Placeholder.Button
+					className="button"
+					variant="success"
+					xs={2}
+				/>
+			</Placeholder>
+		</>
 	);
+
+	if (!isLoading) {
+		if (filesUUIDS.length > 0) {
+			const download = () => {
+				filesUUIDS.map((uuid) => {
+					const endpoint = `/api/v100/learning_object/files/${uuid}/`;
+					const config = {
+						headers: {
+							Authorization: `Token ${localStorage.getItem(
+								"token"
+							)}`,
+						},
+					};
+					requests
+						.get(endpoint, config)
+						.then((response) => response.blob())
+						.then((blob) => {
+							const url = window.URL.createObjectURL(blob);
+							const link = document.createElement("a");
+							link.href = url;
+							link.download = `${title}`;
+							link.click();
+						});
+				});
+			};
+			downloadButton = (
+				<Button className="button" variant="success" onClick={download}>
+					Download
+				</Button>
+			);
+		} else {
+			downloadButton = (
+				<Button className="button" variant="success" disabled>
+					Download
+				</Button>
+			);
+		}
+	}
 	const forkButton = isLoading ? (
 		<Placeholder animation="glow">
 			<Placeholder.Button className="button" variant="primary" xs={2} />
