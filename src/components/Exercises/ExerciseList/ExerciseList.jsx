@@ -19,7 +19,7 @@ const ExerciseList = (props) => {
 		const url = endpoint + "?" + searchParams.toString();
 		const config = {
 			headers: {
-				Authorization: localStorage.getItem("token"),
+				Authorization: `Token ${localStorage.getItem("token")}`,
 			},
 		};
 		requests

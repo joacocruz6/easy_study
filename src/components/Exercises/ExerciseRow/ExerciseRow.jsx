@@ -12,6 +12,7 @@ const ExerciseRow = (props) => {
 						title={exercise.title}
 						description={exercise.description}
 						uuid={exercise.uuid}
+						date={exercise.created_at}
 					/>
 				))}
 			</Row>
