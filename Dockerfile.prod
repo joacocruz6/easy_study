@@ -1,0 +1,10 @@
+FROM node:18.4.0-alpine AS production
+ENV NODE_ENV production
+
+WORKDIR /app
+COPY package.json .
+COPY package-lock.json .
+RUN npm install -i
+
+COPY . .
+RUN npm build
