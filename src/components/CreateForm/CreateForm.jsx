@@ -111,7 +111,7 @@ const CreateForm = () => {
 			.then((data) => {
 				const uuid = data.uuid;
 				const filesUpload = [];
-				const filesEndpoint = `/api/v100/learning_object/files/${uuid}`;
+				const filesEndpoint = `/api/v100/learning_object/files/${uuid}/`;
 				const config = {
 					headers: {
 						Authorization: `Token ${localStorage.getItem("token")}`,

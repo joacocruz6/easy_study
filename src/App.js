@@ -99,16 +99,22 @@ function App() {
 		};
 		requests
 			.post(endpoint, config, data)
-			.then((response) => response.json())
+			.then((response) => {
+				if (response.ok) {
+					return response.json();
+				}
+				throw new Error("Something is bad!");
+			})
 			.then((data) => {
 				const token = data["auth_token"];
 				localStorage.setItem("token", token);
 				setIsAuthenticated(true);
 				document.location = "/";
-			});
+			})
+			.catch((error) => console.log(error));
 	};
 	const logout = () => {
-		const endpoint = "/api/v100/auth/logout";
+		const endpoint = "/api/v100/auth/logout/";
 		const token = localStorage.getItem("token");
 		const config = {
 			mode: "cors",

@@ -41,7 +41,7 @@ const ExerciseDetail = () => {
 		const url = `/api/v100/learning_object/${exercise_uuid}`;
 		const config = {
 			headers: {
-				Authorization: localStorage.getItem("token"),
+				Authorization: `Token ${localStorage.getItem("token")}`,
 			},
 		};
 		requests
@@ -77,11 +77,15 @@ const ExerciseDetail = () => {
 				mode: "cors",
 				headers: {
 					"Content-Type": "application/json",
-					Authorization: localStorage.getItem("token"),
+					Authorization: `Token ${localStorage.getItem("token")}`,
 				},
 			};
-			const selectData = {};
-			requests.post(selectURL, selectConfig, selectData);
+			const selectData = {
+				system_uuid: process.env.REACT_APP_SYSTEM_UUID,
+			};
+			requests
+				.post(selectURL, selectConfig, selectData)
+				.then((response) => setSelectCreated(true));
 		}
 	}, []);
 
