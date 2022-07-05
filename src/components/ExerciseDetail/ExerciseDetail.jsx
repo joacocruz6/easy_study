@@ -38,7 +38,7 @@ const ExerciseDetail = () => {
 	const [filesUUIDS, setFilesUUIDS] = useState([]);
 	const [selectCreated, setSelectCreated] = useState(false);
 	useEffect(() => {
-		const url = `/api/v100/learning_object/${exercise_uuid}`;
+		const url = `/api/v100/learning_object/${exercise_uuid}/`;
 		const config = {
 			headers: {
 				Authorization: `Token ${localStorage.getItem("token")}`,
