@@ -240,7 +240,6 @@ const ExerciseDetail = () => {
 						/>
 					</Accordion>
 					{downloadButton}
-					{forkButton}
 					<Button
 						href="/exercises/all"
 						className="button button-right"
