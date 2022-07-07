@@ -236,6 +236,8 @@ const ExerciseDetail = () => {
 					Upload files
 				</Button>
 			);
+		} else {
+			uploadFilesButton = <></>;
 		}
 	}
 	const forkButton = isLoading ? (
