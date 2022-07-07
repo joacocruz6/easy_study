@@ -12,10 +12,11 @@ const NavbarProfile = (props) => {
 	const isAuthenticated = props.isAuthenticated;
 	const logout = props.logout;
 	let user_name = localStorage.getItem("user_name");
+	let user_email = localStorage.getItem("user_email");
 	if (!user_name) user_name = "";
 	const [userFullName, setUserFullName] = useState(user_name);
 	if (isAuthenticated) {
-		if (userFullName === "") {
+		if (userFullName === "" || !user_email) {
 			const endpoint = "/api/v100/user/current/";
 			const config = {
 				headers: {
@@ -27,7 +28,9 @@ const NavbarProfile = (props) => {
 				.then((response) => response.json())
 				.then((data) => {
 					let userName = `${data["first_name"]} ${data["last_name"]}`;
+					let userEmail = data["email"];
 					localStorage.setItem("user_name", userName);
+					localStorage.setItem("user_email", userEmail);
 					setUserFullName(userName);
 				});
 		}
