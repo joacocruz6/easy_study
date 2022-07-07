@@ -126,6 +126,7 @@ function App() {
 		requests.post(endpoint, config, {}).then((response) => {
 			localStorage.removeItem("token");
 			localStorage.removeItem("user_name");
+			localStorage.removeItem("user_email");
 			setIsAuthenticated(false);
 		});
 	};

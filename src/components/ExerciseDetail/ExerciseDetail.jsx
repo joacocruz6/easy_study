@@ -8,6 +8,7 @@ import "./ExerciseDetail.css";
 import { Button } from "react-bootstrap";
 import { useLinkClickHandler, useParams } from "react-router-dom";
 import requests from "../../utils/requests";
+import FileUploadModal from "./FileUploadModal";
 
 const DetailSection = (props) => {
 	const sectionTitle = props.title;
@@ -37,6 +38,13 @@ const ExerciseDetail = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [filesUUIDS, setFilesUUIDS] = useState([]);
 	const [selectCreated, setSelectCreated] = useState(false);
+	const user_email = localStorage.getItem("user_email");
+	const [showModal, setShowModal] = useState(false);
+	const [canUploadFiles, setCanUploadFiles] = useState(true);
+	const handleCloseModal = () => setShowModal(false);
+	const handleShowModal = () => setShowModal(true);
+	const maxFiles = 4;
+
 	useEffect(() => {
 		const url = `/api/v100/learning_object/${exercise_uuid}`;
 		const config = {
@@ -66,6 +74,10 @@ const ExerciseDetail = () => {
 				setSystem(data.system);
 				setIsLoading(false);
 				setFilesUUIDS(data.files);
+				setCanUploadFiles(
+					data.files.length < maxFiles &&
+						data.creator_email === user_email
+				);
 			})
 			.catch((error) => console.log(error));
 	}, []);
@@ -166,6 +178,17 @@ const ExerciseDetail = () => {
 			</Placeholder>
 		</>
 	);
+	let uploadFilesButton = (
+		<>
+			<Placeholder animation="glow">
+				<Placeholder.Button
+					className="button"
+					variant="secondary"
+					xs={2}
+				/>
+			</Placeholder>
+		</>
+	);
 
 	if (!isLoading) {
 		if (filesUUIDS.length > 0) {
@@ -203,6 +226,17 @@ const ExerciseDetail = () => {
 				</Button>
 			);
 		}
+		if (canUploadFiles) {
+			uploadFilesButton = (
+				<Button
+					className="button"
+					variant="secondary"
+					onClick={handleShowModal}
+				>
+					Upload files
+				</Button>
+			);
+		}
 	}
 	const forkButton = isLoading ? (
 		<Placeholder animation="glow">
@@ -216,6 +250,7 @@ const ExerciseDetail = () => {
 
 	return (
 		<>
+			<FileUploadModal show={showModal} onHide={handleCloseModal} />
 			<Card className="card">
 				<Card.Header>
 					<b>{header}</b>
@@ -240,6 +275,7 @@ const ExerciseDetail = () => {
 						/>
 					</Accordion>
 					{downloadButton}
+					{uploadFilesButton}
 					<Button
 						href="/exercises/all"
 						className="button button-right"

@@ -26,28 +26,6 @@ const FileInput = (props) => {
 	const dismissGenerator = props.dismissGenerator;
 	const filesKeys = props.fileKeys;
 	const onChange = props.inputChange;
-
-	const previousControl = (
-		<Row>
-			<Col>
-				<Form.Control
-					type="file"
-					onChange={(event) => console.log(event.target.files)}
-				/>{" "}
-				<Col>
-					<OverlayTrigger
-						placement="right"
-						delay={{ show: 250, hide: 400 }}
-						overlay={renderDismissTooltip}
-					>
-						<Button variant="outline-danger">
-							<BsXLg />
-						</Button>
-					</OverlayTrigger>
-				</Col>
-			</Col>
-		</Row>
-	);
 	return (
 		<>
 			<Form.Group controlId="formFile" className="mb-3">
