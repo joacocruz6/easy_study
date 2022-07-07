@@ -18,7 +18,7 @@ const FileUploadModal = (props) => {
 			alert("No file submitted");
 			return;
 		}
-		const endpoint = `/api/v100/learning_object/files/${exercise_uuid}`;
+		const endpoint = `/api/v100/learning_object/files/${exercise_uuid}/`;
 		const config = {
 			headers: {
 				Authorization: `Token ${localStorage.getItem("token")}`,
