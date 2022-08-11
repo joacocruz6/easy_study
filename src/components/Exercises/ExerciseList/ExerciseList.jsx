@@ -1,6 +1,7 @@
 import React from "react";
 import ExerciseRow from "../ExerciseRow/ExerciseRow";
 import LoadingExerciseRow from "../ExerciseRow/LoadingExerciseRow";
+import SearchBar from "../SearchBar/SearchBar";
 import Container from "react-bootstrap/Container";
 import { useState, useEffect } from "react";
 import requests from "../../../utils/requests";
@@ -99,6 +100,7 @@ const ExerciseList = (props) => {
 	return (
 		<>
 			<Container>
+				<SearchBar />
 				{content}
 				{buttons}
 			</Container>
