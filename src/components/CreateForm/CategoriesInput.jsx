@@ -2,17 +2,6 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import CreatableSelect from "react-select/creatable";
 
-const initial_options = [
-	{
-		value: "first",
-		label: "first",
-	},
-	{
-		value: "second",
-		label: "second",
-	},
-];
-
 const CategoriesInput = (props) => {
 	const onChangeHandle = props.onChangeHandle;
 	const categoriesLoadHandle = props.categoriesLoad;

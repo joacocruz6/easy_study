@@ -1,6 +1,7 @@
 import React from "react";
 import ExerciseRow from "../ExerciseRow/ExerciseRow";
 import LoadingExerciseRow from "../ExerciseRow/LoadingExerciseRow";
+import SearchBar from "../SearchBar/SearchBar";
 import Container from "react-bootstrap/Container";
 import { useState, useEffect } from "react";
 import requests from "../../../utils/requests";
@@ -14,9 +15,19 @@ const ExerciseList = (props) => {
 	const [hasNext, setHasNext] = useState(false);
 	const [hasPrevious, setHasPrevious] = useState(false);
 
-	const loadExercisesData = (page_number = pageNumber) => {
+	const loadExercisesData = (
+		categoriesQuery = [],
+		page_number = pageNumber
+	) => {
 		const searchParams = new URLSearchParams({ page_number: page_number });
-		const url = endpoint + "?" + searchParams.toString();
+		let url = endpoint + "?" + searchParams.toString();
+		if (categoriesQuery.length > 0) {
+			const categories = categoriesQuery.join();
+			const categoriesParams = new URLSearchParams({
+				categories: categories,
+			});
+			url += "&" + categoriesParams.toString();
+		}
 		const config = {
 			headers: {
 				Authorization: `Token ${localStorage.getItem("token")}`,
@@ -99,6 +110,7 @@ const ExerciseList = (props) => {
 	return (
 		<>
 			<Container>
+				<SearchBar loadHandler={loadExercisesData} />
 				{content}
 				{buttons}
 			</Container>
