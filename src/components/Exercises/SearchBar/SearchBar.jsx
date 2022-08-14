@@ -11,14 +11,14 @@ const SearchBar = (props) => {
 	const [pageNumber, setPageNumber] = useState(1);
 	const [hasNextPage, setHasNextPage] = useState(true);
 	const [isLoadingCategories, setIsLoadingCategories] = useState(true);
+	const loadHandler = props.loadHandler;
 
 	const search = () => {
 		const categories = [];
 		selectedCategories.forEach((category) =>
 			categories.push(category.value)
 		);
-		const searchQuery = categories.join();
-		const searchParams = new URLSearchParams({ categories: searchQuery });
+		loadHandler(categories);
 	};
 
 	const loadCategories = () => {
@@ -63,6 +63,7 @@ const SearchBar = (props) => {
 					isLoading={isLoadingCategories}
 					onMenuScrollBottom={loadCategories}
 					options={availableCategories}
+					placeholder={"Search by category name"}
 				/>
 			</div>
 			<div>
