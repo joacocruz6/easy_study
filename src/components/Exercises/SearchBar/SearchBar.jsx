@@ -6,18 +6,15 @@ import requests from "../../../utils/requests";
 import "./SearchBar.css";
 
 const SearchBar = (props) => {
-	const [selectedCategories, setSelectedCategories] = useState([]);
 	const [availableCategories, setAvailableCategories] = useState([]);
 	const [pageNumber, setPageNumber] = useState(1);
 	const [hasNextPage, setHasNextPage] = useState(true);
 	const [isLoadingCategories, setIsLoadingCategories] = useState(true);
 	const loadHandler = props.loadHandler;
 
-	const search = () => {
+	const handleOnChange = (value) => {
 		const categories = [];
-		selectedCategories.forEach((category) =>
-			categories.push(category.value)
-		);
+		value.forEach((category) => categories.push(category.value));
 		loadHandler(categories);
 	};
 
@@ -59,15 +56,12 @@ const SearchBar = (props) => {
 			<div className="search-bar">
 				<Select
 					isMulti
-					onChange={(value) => setSelectedCategories(value)}
+					onChange={handleOnChange}
 					isLoading={isLoadingCategories}
 					onMenuScrollBottom={loadCategories}
 					options={availableCategories}
 					placeholder={"Search by category name"}
 				/>
-			</div>
-			<div>
-				<Button onClick={search}>Search</Button>
 			</div>
 		</>
 	);
