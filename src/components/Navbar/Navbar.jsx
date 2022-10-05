@@ -63,7 +63,7 @@ const Navigation = (props) => {
 					{menu}
 					<Navbar.Toggle />
 					<Navbar.Collapse style={{ paddingLeft: "27vw" }}>
-						<Navbar.Brand href="/">
+						<Navbar.Brand href="/~easy-study/">
 							<h4> EasyStudy </h4>
 						</Navbar.Brand>
 					</Navbar.Collapse>

@@ -32,7 +32,7 @@ const Main = (props) => {
 							type="success"
 							content={[
 								"Account created successfully! Please go to ",
-								<a href="/login/">login</a>,
+								<a href="/~easy-study/login/">login</a>,
 							]}
 						/>
 					}
@@ -74,7 +74,7 @@ const Main = (props) => {
 	}
 	return (
 		<div className="main">
-			<BrowserRouter>
+			<BrowserRouter basename="~easy-study">
 				<Routes>{routes}</Routes>
 			</BrowserRouter>
 		</div>

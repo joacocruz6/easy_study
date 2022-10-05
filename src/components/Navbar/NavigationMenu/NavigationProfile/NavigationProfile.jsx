@@ -24,7 +24,7 @@ const NavigationProfile = (props) => {
 					overlay={renderTooltip}
 				>
 					<Button
-						href="/profile"
+						href="/~easy-study/profile"
 						className="profile_button"
 						variant="secondary"
 					>

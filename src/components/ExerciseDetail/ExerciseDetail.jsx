@@ -46,7 +46,7 @@ const ExerciseDetail = () => {
 	const maxFiles = 4;
 
 	useEffect(() => {
-		const url = `/api/v100/learning_object/${exercise_uuid}`;
+		const url = `/api/v100/learning_object/${exercise_uuid}/`;
 		const config = {
 			headers: {
 				Authorization: `Token ${localStorage.getItem("token")}`,
@@ -279,7 +279,7 @@ const ExerciseDetail = () => {
 					{downloadButton}
 					{uploadFilesButton}
 					<Button
-						href="/exercises/all"
+						href="/~easy-study/exercises/all"
 						className="button button-right"
 						variant="danger"
 					>

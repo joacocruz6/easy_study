@@ -123,7 +123,8 @@ const CreateForm = () => {
 					);
 				});
 				Promise.all(filesUpload).then(
-					(values) => (document.location.href = `/exercises/${uuid}`)
+					(values) =>
+						(document.location.href = `/~easy-study/exercises/${uuid}`)
 				);
 			});
 	};
