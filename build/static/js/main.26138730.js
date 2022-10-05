@@ -1,4 +1,4 @@
-/*! For license information please see main.f5ce738d.js.LICENSE.txt */
+/*! For license information please see main.26138730.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -16457,15 +16457,17 @@
 									id: "execises-dropdown",
 									children: [
 										(0, E.jsx)(l, {
-											link: "/exercises/all",
+											link: "/~easy-study/exercises/all",
 											text: "See all exercises",
 										}),
 										(0, E.jsx)(l, {
-											link: "/exercises/create",
+											link:
+												"/~easy-study/exercises/create",
 											text: "Create/Upload exercise",
 										}),
 										(0, E.jsx)(l, {
-											link: "/exercises/my_exercises",
+											link:
+												"/~easy-study/exercises/my_exercises",
 											text:
 												"See my exercises created/uploaded",
 										}),
@@ -26639,4 +26641,4 @@
 				Cd();
 		})();
 })();
-//# sourceMappingURL=main.f5ce738d.js.map
+//# sourceMappingURL=main.26138730.js.map
