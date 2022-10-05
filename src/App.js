@@ -109,7 +109,7 @@ function App() {
 				const token = data["auth_token"];
 				localStorage.setItem("token", token);
 				setIsAuthenticated(true);
-				document.location = "/";
+				document.location = "/~easy-study/";
 			})
 			.catch((error) => console.log(error));
 	};
