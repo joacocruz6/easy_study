@@ -1,4 +1,4 @@
-/*! For license information please see main.6e0b7a4d.js.LICENSE.txt */
+/*! For license information please see main.f5ce738d.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -26116,7 +26116,7 @@
 									})
 									.then(function (e) {
 										return (document.location =
-											"/profile/");
+											"/~easy-study/profile/");
 									})
 									.catch(function (e) {
 										return console.log(e);
@@ -26411,7 +26411,7 @@
 											})
 											.then(function (e) {
 												document.location =
-													"/account/success/";
+													"/~easy-study/account/success/";
 											})
 											.catch(function (e) {
 												return v([
@@ -26606,7 +26606,8 @@
 											var t = e.auth_token;
 											localStorage.setItem("token", t),
 												a(!0),
-												(document.location = "/");
+												(document.location =
+													"/~easy-study/");
 										})
 										.catch(function (e) {
 											return console.log(e);
@@ -26638,4 +26639,4 @@
 				Cd();
 		})();
 })();
-//# sourceMappingURL=main.6e0b7a4d.js.map
+//# sourceMappingURL=main.f5ce738d.js.map
