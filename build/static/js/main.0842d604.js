@@ -1,4 +1,4 @@
-/*! For license information please see main.eda07089.js.LICENSE.txt */
+/*! For license information please see main.0842d604.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -10955,7 +10955,7 @@
 				}),
 				Object.defineProperty(e, "__esModule", { value: !0 });
 		}),
-		(n.p = "./"),
+		(n.p = "/~easy-study/"),
 		(function () {
 			var e = { 179: 0 };
 			n.f.j = function (t, r) {
@@ -26635,4 +26635,4 @@
 				Cd();
 		})();
 })();
-//# sourceMappingURL=main.eda07089.js.map
+//# sourceMappingURL=main.0842d604.js.map

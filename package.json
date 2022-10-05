@@ -7,7 +7,7 @@
 		"npm": "8.5.5"
 	},
 	"proxy": "http://localhost:3030",
-	"homepage": ".",
+	"homepage": "http://buho.dcc.uchile.cl/~easy-study",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.4",
 		"@testing-library/react": "^13.2.0",
