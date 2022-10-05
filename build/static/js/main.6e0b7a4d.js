@@ -1,4 +1,4 @@
-/*! For license information please see main.cb7403ef.js.LICENSE.txt */
+/*! For license information please see main.6e0b7a4d.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -16553,7 +16553,7 @@
 					});
 				},
 				to = function (e, t) {
-					var n = ["http://localhost:3800", e].join("");
+					var n = ["https://buho.dcc.uchile.cl/~jcruz", e].join("");
 					return fetch(n, t);
 				},
 				no = {
@@ -23949,7 +23949,7 @@
 														categories: r,
 														content: u,
 														system_uuid:
-															"c696289b-1a7c-44c5-acaf-9fa61292dc0c",
+															"9cee8b47-d1fd-453a-9c29-d0a83e638c6e",
 													},
 													i = {
 														mode: "cors",
@@ -25389,7 +25389,7 @@
 									};
 								ro.post(e, n, {
 									system_uuid:
-										"c696289b-1a7c-44c5-acaf-9fa61292dc0c",
+										"9cee8b47-d1fd-453a-9c29-d0a83e638c6e",
 								}).then(function (e) {
 									return R(!0);
 								});
@@ -26638,4 +26638,4 @@
 				Cd();
 		})();
 })();
-//# sourceMappingURL=main.cb7403ef.js.map
+//# sourceMappingURL=main.6e0b7a4d.js.map
