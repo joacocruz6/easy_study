@@ -15,7 +15,7 @@ const SearchBar = (props) => {
 	const handleOnChange = (value) => {
 		const categories = [];
 		value.forEach((category) => categories.push(category.value));
-		loadHandler(categories);
+		loadHandler(pageNumber, categories);
 	};
 
 	const loadCategories = () => {

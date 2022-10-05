@@ -16,12 +16,12 @@ const ExerciseList = (props) => {
 	const [hasPrevious, setHasPrevious] = useState(false);
 
 	const loadExercisesData = (
-		categoriesQuery = [],
-		page_number = pageNumber
+		page_number = pageNumber,
+		categoriesQuery = []
 	) => {
 		const searchParams = new URLSearchParams({ page_number: page_number });
 		let url = endpoint + "?" + searchParams.toString();
-		if (categoriesQuery.length > 0) {
+		if (Array.isArray(categoriesQuery) && categoriesQuery.length > 0) {
 			const categories = categoriesQuery.join();
 			const categoriesParams = new URLSearchParams({
 				categories: categories,
@@ -52,9 +52,9 @@ const ExerciseList = (props) => {
 				}
 				setExercises(loadedData);
 				setIsLoading(false);
-				setPageNumber(data["page_number"]);
+				setPageNumber(parseInt(data["page_number"]));
 				setHasNext(data["has_next_page"]);
-				setHasPrevious(data["page_number"] - 1 !== 0);
+				setHasPrevious(parseInt(data["page_number"]) - 1 !== 0);
 			});
 	};
 	const previousButton = hasPrevious ? (

@@ -1,4 +1,4 @@
-/*! For license information please see main.26138730.js.LICENSE.txt */
+/*! For license information please see main.b8b6b09d.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -22996,7 +22996,7 @@
 										e.forEach(function (e) {
 											return t.push(e.value);
 										}),
-											m(t);
+											m(l, t);
 									},
 									isLoading: p,
 									onMenuScrollBottom: v,
@@ -23062,16 +23062,16 @@
 									arguments.length > 0 &&
 									void 0 !== arguments[0]
 										? arguments[0]
-										: [],
+										: f,
 								t =
 									arguments.length > 1 &&
 									void 0 !== arguments[1]
 										? arguments[1]
-										: f,
-								r = new URLSearchParams({ page_number: t }),
+										: [],
+								r = new URLSearchParams({ page_number: e }),
 								a = n + "?" + r.toString();
-							if (e.length > 0) {
-								var i = e.join(),
+							if (Array.isArray(t) && t.length > 0) {
+								var i = t.join(),
 									l = new URLSearchParams({ categories: i });
 								a += "&" + l.toString();
 							}
@@ -23101,9 +23101,9 @@
 									}
 									o(t),
 										u(!1),
-										d(e.page_number),
+										d(parseInt(e.page_number)),
 										m(e.has_next_page),
-										y(e.page_number - 1 !== 0);
+										y(parseInt(e.page_number) - 1 !== 0);
 								});
 						},
 						x = g
@@ -26641,4 +26641,4 @@
 				Cd();
 		})();
 })();
-//# sourceMappingURL=main.26138730.js.map
+//# sourceMappingURL=main.b8b6b09d.js.map
