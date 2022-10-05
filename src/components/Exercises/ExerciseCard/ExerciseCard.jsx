@@ -9,6 +9,12 @@ const ExerciseCard = (props) => {
 	const description = props.description;
 	const title = props.title;
 	const uuid = props.uuid;
+	const categories = props.categories;
+	let badgesContent = [];
+	for (let i = 0; i < Math.min(categories.length, 3); i++) {
+		badgesContent.push(categories[i].name);
+	}
+
 	const buttonOnClick = () => {
 		const buttonHref = `/exercises/${uuid}`;
 		const selectURL = `/api/v100/learning_object/${uuid}/select/`;
@@ -32,6 +38,7 @@ const ExerciseCard = (props) => {
 					<Card.Text style={{ textAlign: "left" }}>
 						{description}
 					</Card.Text>
+
 					<Button
 						href={buttonHref}
 						className="ExerciseButton"

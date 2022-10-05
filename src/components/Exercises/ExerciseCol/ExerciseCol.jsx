@@ -7,7 +7,7 @@ const ExerciseCol = (props) => {
 	const description = props.description;
 	const uuid = props.uuid;
 	const date = props.date;
-
+	const categories = props.categories;
 	return (
 		<>
 			<Col>
@@ -16,6 +16,7 @@ const ExerciseCol = (props) => {
 					title={title}
 					uuid={uuid}
 					date={date}
+					categories={categories}
 				/>
 			</Col>
 		</>
