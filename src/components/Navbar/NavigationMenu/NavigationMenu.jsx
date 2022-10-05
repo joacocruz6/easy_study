@@ -30,15 +30,15 @@ const ExercisesDropdown = () => {
 			<Collapse in={open}>
 				<div className="collapse_div" id="execises-dropdown">
 					<DropdownItem
-						link="/exercises/all"
+						link="/~easy-study/exercises/all"
 						text="See all exercises"
 					/>
 					<DropdownItem
-						link="/exercises/create"
+						link="/~easy-study/exercises/create"
 						text="Create/Upload exercise"
 					/>
 					<DropdownItem
-						link="/exercises/my_exercises"
+						link="/~easy-study/exercises/my_exercises"
 						text="See my exercises created/uploaded"
 					/>
 				</div>
