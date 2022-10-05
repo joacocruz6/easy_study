@@ -20,7 +20,7 @@ const HomePage = () => (
 								filter them by title and categories.
 							</Card.Text>
 							<div className="text-center">
-								<Button href="/exercises/all">
+								<Button href="/~easy-study/exercises/all">
 									See all exercises
 								</Button>
 							</div>
@@ -37,7 +37,7 @@ const HomePage = () => (
 								repositorium system.
 							</Card.Text>
 							<div className="text-center">
-								<Button href="/exercises/create">
+								<Button href="/~easy-study/exercises/create">
 									Create an exercise
 								</Button>
 							</div>
@@ -57,7 +57,7 @@ const HomePage = () => (
 								system.
 							</Card.Text>
 							<div className="text-center">
-								<Button href="/exercises/my_exercises">
+								<Button href="/~easy-study/exercises/my_exercises">
 									See my exercises created
 								</Button>
 							</div>
@@ -73,7 +73,9 @@ const HomePage = () => (
 								You can change and see your profile information.
 							</Card.Text>
 							<div className="text-center">
-								<Button href="/profile">Change profile</Button>
+								<Button href="/~easy-study/profile">
+									Change profile
+								</Button>
 							</div>
 						</Card.Body>
 					</Card>

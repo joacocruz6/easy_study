@@ -28,7 +28,7 @@ const FileUploadModal = (props) => {
 			.postFile(endpoint, config, file)
 			.then((response) => {
 				if (response.ok) {
-					document.location.href = `/exercises/${exercise_uuid}`;
+					document.location.href = `/~easy-study/exercises/${exercise_uuid}`;
 					return;
 				}
 				throw Error("Something went wrong");

@@ -279,7 +279,7 @@ const ExerciseDetail = () => {
 					{downloadButton}
 					{uploadFilesButton}
 					<Button
-						href="/exercises/all"
+						href="/~easy-study/exercises/all"
 						className="button button-right"
 						variant="danger"
 					>

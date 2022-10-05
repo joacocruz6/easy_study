@@ -16,7 +16,7 @@ const ExerciseCard = (props) => {
 	}
 
 	const buttonOnClick = () => {
-		const buttonHref = `/exercises/${uuid}`;
+		const buttonHref = `/~easy-study/exercises/${uuid}`;
 		const selectURL = `/api/v100/learning_object/${uuid}/select/`;
 		const config = {
 			headers: {
@@ -29,7 +29,7 @@ const ExerciseCard = (props) => {
 			.post(selectURL, config, data)
 			.then((response) => (document.location.href = buttonHref));
 	};
-	const buttonHref = `/exercises/${uuid}`;
+	const buttonHref = `/~easy-study/exercises/${uuid}`;
 	return (
 		<>
 			<Card className="ExerciseCard">

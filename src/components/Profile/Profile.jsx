@@ -143,7 +143,7 @@ const Profile = () => {
 		</>
 	) : (
 		<Button
-			href="/change_password"
+			href="/~easy-study/change_password"
 			style={{ marginTop: "10px" }}
 			variant="secondary"
 		>

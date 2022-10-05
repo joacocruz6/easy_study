@@ -4,7 +4,7 @@ import "../../../../utils/navigation_button.css";
 
 const NavigationLogIn = () => (
 	<>
-		<Button href="/login" className="menu_button">
+		<Button href="/~easy-study/login" className="menu_button">
 			Log In
 		</Button>
 	</>
