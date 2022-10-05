@@ -1,17 +1,8 @@
 import React from "react";
-import express from "express";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
-const app = express();
-
-app.use(express.static(__dirname));
-
-app.get("/*", (req, res) => {
-	res.sendFile(path.join(__dirname, "index.html"));
-});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
