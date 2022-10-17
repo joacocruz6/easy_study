@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import requests from "../../../utils/requests";
+import Badge from "react-bootstrap/Badge";
 import "./ExerciseCard.css";
 
 const ExerciseCard = (props) => {
@@ -11,24 +11,9 @@ const ExerciseCard = (props) => {
 	const uuid = props.uuid;
 	const categories = props.categories;
 	let badgesContent = [];
-	for (let i = 0; i < Math.min(categories.length, 3); i++) {
+	for (let i = 0; i < Math.min(categories.length, 5); i++) {
 		badgesContent.push(categories[i].name);
 	}
-
-	const buttonOnClick = () => {
-		const buttonHref = `/~easy-study/exercises/${uuid}`;
-		const selectURL = `/api/v100/learning_object/${uuid}/select/`;
-		const config = {
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Token ${localStorage.getItem("token")}`,
-			},
-		};
-		const data = {};
-		requests
-			.post(selectURL, config, data)
-			.then((response) => (document.location.href = buttonHref));
-	};
 	const buttonHref = `/~easy-study/exercises/${uuid}`;
 	return (
 		<>
@@ -38,14 +23,21 @@ const ExerciseCard = (props) => {
 					<Card.Text style={{ textAlign: "left" }}>
 						{description}
 					</Card.Text>
-
+					<Card.Text style={{ textAlign: "left" }}>
+						{badgesContent.map((content) => (
+							<Badge style={{ margin: "2px" }} pill bg="dark">
+								{" "}
+								{content}
+							</Badge>
+						))}
+					</Card.Text>
 					<Button
 						href={buttonHref}
 						className="ExerciseButton"
 						variant="primary"
 						style={{ margin: "4px" }}
 					>
-						Check the content!
+						More details
 					</Button>
 				</Card.Body>
 				<Card.Footer className="text-muted">{date}</Card.Footer>
