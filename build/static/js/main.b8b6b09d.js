@@ -1,4 +1,4 @@
-/*! For license information please see main.cb7403ef.js.LICENSE.txt */
+/*! For license information please see main.b8b6b09d.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -16457,15 +16457,17 @@
 									id: "execises-dropdown",
 									children: [
 										(0, E.jsx)(l, {
-											link: "/exercises/all",
+											link: "/~easy-study/exercises/all",
 											text: "See all exercises",
 										}),
 										(0, E.jsx)(l, {
-											link: "/exercises/create",
+											link:
+												"/~easy-study/exercises/create",
 											text: "Create/Upload exercise",
 										}),
 										(0, E.jsx)(l, {
-											link: "/exercises/my_exercises",
+											link:
+												"/~easy-study/exercises/my_exercises",
 											text:
 												"See my exercises created/uploaded",
 										}),
@@ -16553,7 +16555,7 @@
 					});
 				},
 				to = function (e, t) {
-					var n = ["http://localhost:3800", e].join("");
+					var n = ["https://buho.dcc.uchile.cl/~jcruz", e].join("");
 					return fetch(n, t);
 				},
 				no = {
@@ -22994,7 +22996,7 @@
 										e.forEach(function (e) {
 											return t.push(e.value);
 										}),
-											m(t);
+											m(l, t);
 									},
 									isLoading: p,
 									onMenuScrollBottom: v,
@@ -23060,16 +23062,16 @@
 									arguments.length > 0 &&
 									void 0 !== arguments[0]
 										? arguments[0]
-										: [],
+										: f,
 								t =
 									arguments.length > 1 &&
 									void 0 !== arguments[1]
 										? arguments[1]
-										: f,
-								r = new URLSearchParams({ page_number: t }),
+										: [],
+								r = new URLSearchParams({ page_number: e }),
 								a = n + "?" + r.toString();
-							if (e.length > 0) {
-								var i = e.join(),
+							if (Array.isArray(t) && t.length > 0) {
+								var i = t.join(),
 									l = new URLSearchParams({ categories: i });
 								a += "&" + l.toString();
 							}
@@ -23099,9 +23101,9 @@
 									}
 									o(t),
 										u(!1),
-										d(e.page_number),
+										d(parseInt(e.page_number)),
 										m(e.has_next_page),
-										y(e.page_number - 1 !== 0);
+										y(parseInt(e.page_number) - 1 !== 0);
 								});
 						},
 						x = g
@@ -23949,7 +23951,7 @@
 														categories: r,
 														content: u,
 														system_uuid:
-															"c696289b-1a7c-44c5-acaf-9fa61292dc0c",
+															"9cee8b47-d1fd-453a-9c29-d0a83e638c6e",
 													},
 													i = {
 														mode: "cors",
@@ -25389,7 +25391,7 @@
 									};
 								ro.post(e, n, {
 									system_uuid:
-										"c696289b-1a7c-44c5-acaf-9fa61292dc0c",
+										"9cee8b47-d1fd-453a-9c29-d0a83e638c6e",
 								}).then(function (e) {
 									return R(!0);
 								});
@@ -26116,7 +26118,7 @@
 									})
 									.then(function (e) {
 										return (document.location =
-											"/profile/");
+											"/~easy-study/profile/");
 									})
 									.catch(function (e) {
 										return console.log(e);
@@ -26411,7 +26413,7 @@
 											})
 											.then(function (e) {
 												document.location =
-													"/account/success/";
+													"/~easy-study/account/success/";
 											})
 											.catch(function (e) {
 												return v([
@@ -26606,7 +26608,8 @@
 											var t = e.auth_token;
 											localStorage.setItem("token", t),
 												a(!0),
-												(document.location = "/");
+												(document.location =
+													"/~easy-study/");
 										})
 										.catch(function (e) {
 											return console.log(e);
@@ -26638,4 +26641,4 @@
 				Cd();
 		})();
 })();
-//# sourceMappingURL=main.cb7403ef.js.map
+//# sourceMappingURL=main.b8b6b09d.js.map

@@ -25,21 +25,21 @@ const ExercisesDropdown = () => {
 				aria-controls="execises-dropdown"
 				aria-expanded={open}
 			>
-				Exercises {icon}
+				Content {icon}
 			</Button>
 			<Collapse in={open}>
 				<div className="collapse_div" id="execises-dropdown">
 					<DropdownItem
-						link="/exercises/all"
-						text="See all exercises"
+						link="/~easy-study/exercises/all"
+						text="See all content"
 					/>
 					<DropdownItem
-						link="/exercises/create"
-						text="Create/Upload exercise"
+						link="/~easy-study/exercises/create"
+						text="Create/Upload content"
 					/>
 					<DropdownItem
-						link="/exercises/my_exercises"
-						text="See my exercises created/uploaded"
+						link="/~easy-study/exercises/my_exercises"
+						text="See my created/uploaded content"
 					/>
 				</div>
 			</Collapse>
@@ -75,7 +75,7 @@ const NavigationMenu = (props) => {
 				</Offcanvas.Header>
 				<Offcanvas.Body>
 					<div className="d-grid gap-2">
-						<NavigationItem link="/" text="Home" />
+						<NavigationItem link="/~easy-study/" text="Home" />
 						<ExercisesDropdown />
 					</div>
 					<NavigationProfile logout={logout} />

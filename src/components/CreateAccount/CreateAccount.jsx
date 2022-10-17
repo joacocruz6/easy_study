@@ -55,7 +55,7 @@ const CreateAccountForm = () => {
 				throw new Error("Something went wrong");
 			})
 			.then((data) => {
-				document.location = "/account/success/";
+				document.location = "/~easy-study/account/success/";
 			})
 			.catch((error) =>
 				setErrors([

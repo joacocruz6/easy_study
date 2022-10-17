@@ -14,14 +14,14 @@ const HomePage = () => (
 					<Card className="card">
 						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
 						<Card.Body>
-							<Card.Title>See all exercises</Card.Title>
+							<Card.Title>See all study content</Card.Title>
 							<Card.Text>
-								Here you can see all the exercises submitted,
-								filter them by title and categories.
+								Here you can see all the study material
+								submitted, filter them by categories.
 							</Card.Text>
 							<div className="text-center">
 								<Button href="/~easy-study/exercises/all">
-									See all exercises
+									See all content
 								</Button>
 							</div>
 						</Card.Body>
@@ -31,14 +31,14 @@ const HomePage = () => (
 					<Card className="card">
 						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
 						<Card.Body>
-							<Card.Title>Create an exercise</Card.Title>
+							<Card.Title>Upload study content</Card.Title>
 							<Card.Text>
-								Here you can upload or create an exercise to the
-								repositorium system.
+								Here you can upload or create study content to
+								the repositorium system.
 							</Card.Text>
 							<div className="text-center">
 								<Button href="/~easy-study/exercises/create">
-									Create an exercise
+									Upload/Create Content
 								</Button>
 							</div>
 						</Card.Body>
@@ -51,14 +51,14 @@ const HomePage = () => (
 					<Card className="card">
 						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
 						<Card.Body>
-							<Card.Title>See my exercises</Card.Title>
+							<Card.Title>See my uploaded content</Card.Title>
 							<Card.Text>
-								See the exercises that you have updated into the
-								system.
+								See the study content that <b>you</b> have
+								updated into the system.
 							</Card.Text>
 							<div className="text-center">
 								<Button href="/~easy-study/exercises/my_exercises">
-									See my exercises created
+									See my uploaded content
 								</Button>
 							</div>
 						</Card.Body>

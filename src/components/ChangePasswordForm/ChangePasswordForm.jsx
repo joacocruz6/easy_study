@@ -34,7 +34,7 @@ const ChangePasswordForm = () => {
 				}
 				throw new Error("Something went wrong");
 			})
-			.then((data) => (document.location = "/profile/"))
+			.then((data) => (document.location = "/~easy-study/profile/"))
 			.catch((error) => console.log(error));
 	};
 	const title = "Change Password";
