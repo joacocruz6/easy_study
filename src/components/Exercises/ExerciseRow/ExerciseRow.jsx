@@ -4,9 +4,11 @@ import ExerciseCol from "../ExerciseCol/ExerciseCol";
 
 const ExerciseRow = (props) => {
 	const exercises = props.exercises;
+	const xs = props.xs;
+	const md = props.md;
 	return (
 		<>
-			<Row xs={1} md={2} className="g-4" style={{ margin: "10px" }}>
+			<Row xs={xs} md={md} className="g-4" style={{ margin: "10px" }}>
 				{exercises.map((exercise) => (
 					<ExerciseCol
 						title={exercise.title}

@@ -8,7 +8,7 @@ import "./HomePage.css";
 
 const HomePage = () => (
 	<>
-		<Container>
+		<Container fluid={true}>
 			<Row xs={2} md={2} className="g-4">
 				<Col>
 					<Card className="card">

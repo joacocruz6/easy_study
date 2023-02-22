@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import { useState, useEffect } from "react";
 import requests from "../../../utils/requests";
 import { ButtonGroup, Button } from "react-bootstrap";
+import RecomendationBox from "../Recomendation/Recomendation";
 
 const ExerciseList = (props) => {
 	const endpoint = props.endpoint;
@@ -100,17 +101,21 @@ const ExerciseList = (props) => {
 	useEffect(loadExercisesData, []);
 	const content = isLoading ? (
 		<>
-			<LoadingExerciseRow />
-			<LoadingExerciseRow />
-			<LoadingExerciseRow />
+			<LoadingExerciseRow xs={1} md={2} />
+			<LoadingExerciseRow xs={1} md={2} />
+			<LoadingExerciseRow xs={1} md={2} />
 		</>
 	) : (
-		exercises.map((exercise) => <ExerciseRow exercises={exercise} />)
+		exercises.map((exercise) => (
+			<ExerciseRow xs={1} md={2} exercises={exercise} />
+		))
 	);
+	const recomendation = <RecomendationBox />;
 	return (
 		<>
-			<Container>
+			<Container fluid={true}>
 				<SearchBar loadHandler={loadExercisesData} />
+				{recomendation}
 				{content}
 				{buttons}
 			</Container>
