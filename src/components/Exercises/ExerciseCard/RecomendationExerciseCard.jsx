@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 import "./ExerciseCard.css";
 
-const ExerciseCard = (props) => {
+const RecomendedExerciseCard = (props) => {
 	const date = new Date(props.date).toDateString();
 	const description = props.description;
 	const title = props.title;
@@ -46,4 +46,4 @@ const ExerciseCard = (props) => {
 	);
 };
 
-export default ExerciseCard;
+export default RecomendedExerciseCard;

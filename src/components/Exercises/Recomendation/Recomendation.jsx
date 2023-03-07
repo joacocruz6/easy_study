@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import ExerciseRow from "../ExerciseRow/ExerciseRow";
+import RecomendationExerciseRow from "../ExerciseRow/RecomendationExerciseRow";
 import "./Recomendation.css";
 import requests from "../../../utils/requests";
 
@@ -136,7 +136,12 @@ const RecomendationBox = () => {
 				<h5>We recomend</h5>
 			</div>
 			<div>
-				<ExerciseRow xs={1} md={2} exercises={recomendedExercises} />
+				<RecomendationExerciseRow
+					xs={1}
+					md={2}
+					exercises={recomendedExercises}
+					registerSelectedOption={registerSelectedOption}
+				/>
 			</div>
 		</div>
 	);
