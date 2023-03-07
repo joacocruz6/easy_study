@@ -78,35 +78,57 @@ const exercises = [
 		],
 	},
 ];
-
-const recomendersPaths = [
-	"/api/v100/recomend/v0/",
-	"/api/v100/recomend/v1/",
-	"/api/v100/recomend/v2/",
-	"/api/v100/recomend/v3/",
-];
+const experimentUrl = "/api/v100/experiment/";
 
 const RecomendationBox = () => {
 	const [recomendedExercises, setRecomendedExercises] = useState([]);
-
-	const loadRecomendations = () => {
+	const [experimentNextUrl, setExperimentNextUrl] = useState([]);
+	const loadExperiment = () => {
 		const config = {
 			headers: {
 				Authorization: `Token ${localStorage.getItem("token")}`,
 			},
 		};
-		let promises = recomendersPaths.map((endpoint) =>
-			requests
-				.get(endpoint, config)
-				.then((response) =>
-					response.ok ? response.json() : Promise.reject(response)
-				)
-		);
-		Promise.all(promises).then((values) => {
-			setRecomendedExercises(values);
-			console.log(values);
-		});
+		requests
+			.post(experimentUrl, config, {})
+			.then((response) => {
+				if (response.ok) {
+					return response.json();
+				}
+				throw new Error("Error creating experiment");
+			})
+			.then((data) => {
+				setRecomendedExercises(data.data);
+				setExperimentNextUrl(data.url);
+			})
+			.catch((reason) => console.log(reason));
 	};
+	const registerSelectedOption = (learningObjectUUID) => {
+		return () => {
+			const config = {
+				headers: {
+					Authorization: `Token ${localStorage.getItem("token")}`,
+				},
+			};
+			data = {
+				selected_learning_object_uuid: learningObjectUUID,
+			};
+			requests
+				.post(experimentNextUrl, config, data)
+				.then((response) => {
+					if (response.ok) {
+						return response.json();
+					}
+					throw new Error("Error submitting experiment choice");
+				})
+				.then(
+					(data) =>
+						(window.location.href = `/~easy-study/exercises/${learningObjectUUID}`)
+				)
+				.catch((error) => console.log(error));
+		};
+	};
+
 	useEffect(loadRecomendations, []);
 	return (
 		<div className="recomendation-container">
