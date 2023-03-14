@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import RecomendationExerciseRow from "../ExerciseRow/RecomendationExerciseRow";
 import "./Recomendation.css";
 import requests from "../../../utils/requests";
+import LoadingExerciseRow from "../ExerciseRow/LoadingExerciseRow";
 
 const exercises = [
 	{
@@ -82,7 +83,8 @@ const experimentUrl = "/api/v100/experiment/";
 
 const RecomendationBox = () => {
 	const [recomendedExercises, setRecomendedExercises] = useState([]);
-	const [experimentNextUrl, setExperimentNextUrl] = useState([]);
+	const [experimentNextUrl, setExperimentNextUrl] = useState("");
+	const [loading, setLoading] = useState(true);
 	const loadExperiment = () => {
 		const config = {
 			headers: {
@@ -98,8 +100,13 @@ const RecomendationBox = () => {
 				throw new Error("Error creating experiment");
 			})
 			.then((data) => {
-				setRecomendedExercises(data.data);
-				setExperimentNextUrl(data.url);
+				let experimentUrl = `/api/v100/experiment/${data.experiment_uuid}/`;
+				if (loading) {
+					console.log(data);
+					setRecomendedExercises(data.learning_objects);
+					setExperimentNextUrl(experimentUrl);
+					setLoading(false);
+				}
 			})
 			.catch((reason) => console.log(reason));
 	};
@@ -110,11 +117,11 @@ const RecomendationBox = () => {
 					Authorization: `Token ${localStorage.getItem("token")}`,
 				},
 			};
-			data = {
+			let data = {
 				selected_learning_object_uuid: learningObjectUUID,
 			};
 			requests
-				.post(experimentNextUrl, config, data)
+				.put(experimentNextUrl, config, data)
 				.then((response) => {
 					if (response.ok) {
 						return response.json();
@@ -129,20 +136,27 @@ const RecomendationBox = () => {
 		};
 	};
 
-	useEffect(loadRecomendations, []);
+	useEffect(loadExperiment, []);
+	let recomendations = loading ? (
+		<>
+			<LoadingExerciseRow xs={1} md={2} />
+			<LoadingExerciseRow xs={1} md={2} />
+			<LoadingExerciseRow xs={1} md={2} />
+		</>
+	) : (
+		<RecomendationExerciseRow
+			xs={1}
+			md={2}
+			exercises={recomendedExercises}
+			registerSelectedOption={registerSelectedOption}
+		/>
+	);
 	return (
 		<div className="recomendation-container">
 			<div className="recomendation-title-container">
 				<h5>We recomend</h5>
 			</div>
-			<div>
-				<RecomendationExerciseRow
-					xs={1}
-					md={2}
-					exercises={recomendedExercises}
-					registerSelectedOption={registerSelectedOption}
-				/>
-			</div>
+			<div>{recomendations}</div>
 		</div>
 	);
 };

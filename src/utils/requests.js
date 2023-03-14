@@ -13,6 +13,11 @@ const postRequest = (endpoint, config, data) => {
 	return request(endpoint, config);
 };
 
+const putRequest = (endpoint, config, data) => {
+	config["method"] = "PUT";
+	config["body"] = JSON.stringify(data);
+	return request(endpoint, config);
+};
 const postFileRequest = (endpoint, config, file) => {
 	config["method"] = "POST";
 	config["headers"][
@@ -26,6 +31,7 @@ const requests = {
 	request: request,
 	get: getRequest,
 	post: postRequest,
+	put: putRequest,
 	postFile: postFileRequest,
 };
 
