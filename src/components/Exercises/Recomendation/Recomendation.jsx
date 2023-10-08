@@ -79,38 +79,76 @@ const exercises = [
 		],
 	},
 ];
+
+const recomendationModels = [
+	"66c99e25-cdc7-4ed6-8f4c-9d3619898b8b",
+	"529c758f-9de6-4e25-bbd5-27db8b9f3011",
+	"548e3f29-39d0-4bef-bbcf-b4bb5900785b",
+	"29c909ac-ccb0-4a0a-9818-a9e0f4833910",
+];
+
 const experimentUrl = "/api/v100/experiment/";
 
 const RecomendationBox = () => {
 	const [recomendedExercises, setRecomendedExercises] = useState([]);
-	const [experimentNextUrl, setExperimentNextUrl] = useState("");
+	const [experimentUUID, setExperimentUUID] = useState("");
 	const [loading, setLoading] = useState(true);
-	const loadExperiment = () => {
+	// Get the recomendations
+	// Create the experiment
+	// Create the function to finish an experiment,
+	// On choosing an exercise, the experiment must be finished
+	const loadRecomendations = () => {
 		const config = {
 			headers: {
 				Authorization: `Token ${localStorage.getItem("token")}`,
 			},
 		};
-		requests
-			.post(experimentUrl, config, {})
-			.then((response) => {
-				if (response.ok) {
-					return response.json();
-				}
-				throw new Error("Error creating experiment");
-			})
-			.then((data) => {
-				let experimentUrl = `/api/v100/experiment/${data.experiment_uuid}/`;
+		let promises = [];
+		for (let i = 0; i < recomendationModels.length; i++) {
+			const recomendationModelUUID = recomendationModels[i];
+			const url = `/api/v100/recomend/${recomendationModelUUID}/get_recomendation`;
+			const uuid = localStorage.getItem("user_uuid");
+			const data = {
+				uuid: uuid,
+			};
+			promises.push(
+				requests
+					.post(url, config, data)
+					.then((response) => {
+						if (response.ok) {
+							return response.json();
+						}
+						throw new Error();
+					})
+					.then((data) => {
+						data["modelUUID"] = recomendationModelUUID;
+						return data;
+					})
+			);
+		}
+		if (promises.length > 0) {
+			Promise.all(promises).then((datas) => {
+				console.log(datas);
 				if (loading) {
-					console.log(data);
-					setRecomendedExercises(data.learning_objects);
-					setExperimentNextUrl(experimentUrl);
-					setLoading(false);
+					setRecomendedExercises(datas);
+					const url = `/api/v100/experiment/`;
+					requests
+						.post(url, config, {})
+						.then((response) => {
+							if (response.ok) {
+								return response.json();
+							}
+							throw new Error();
+						})
+						.then((data) => {
+							setExperimentUUID(data.uuid);
+							setLoading(false);
+						});
 				}
-			})
-			.catch((reason) => console.log(reason));
+			});
+		}
 	};
-	const registerSelectedOption = (learningObjectUUID) => {
+	const registerSelectedOption = (learningObjectUUID, selectedModelUUID) => {
 		return () => {
 			const config = {
 				headers: {
@@ -118,10 +156,12 @@ const RecomendationBox = () => {
 				},
 			};
 			let data = {
-				selected_learning_object_uuid: learningObjectUUID,
+				item: learningObjectUUID,
+				model: selectedModelUUID,
 			};
+			const url = experimentUrl + experimentUUID;
 			requests
-				.put(experimentNextUrl, config, data)
+				.put(url, config, data)
 				.then((response) => {
 					if (response.ok) {
 						return response.json();
@@ -136,7 +176,7 @@ const RecomendationBox = () => {
 		};
 	};
 
-	useEffect(loadExperiment, []);
+	useEffect(loadRecomendations, []);
 	let recomendations = loading ? (
 		<>
 			<LoadingExerciseRow xs={1} md={2} />

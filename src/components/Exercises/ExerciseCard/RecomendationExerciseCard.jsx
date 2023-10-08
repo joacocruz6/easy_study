@@ -9,6 +9,7 @@ const RecomendedExerciseCard = (props) => {
 	const description = props.description;
 	const title = props.title;
 	const uuid = props.uuid;
+	const modelUUID = props.modelUUID;
 	const categories = props.categories;
 	const registerSelectedOption = props.registerSelectedOption;
 	let badgesContent = [];
@@ -32,7 +33,7 @@ const RecomendedExerciseCard = (props) => {
 						))}
 					</Card.Text>
 					<Button
-						onClick={registerSelectedOption(uuid)}
+						onClick={registerSelectedOption(uuid, modelUUID)}
 						className="ExerciseButton"
 						variant="primary"
 						style={{ margin: "4px" }}

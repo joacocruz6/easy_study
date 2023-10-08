@@ -17,6 +17,7 @@ const RecomendationExerciseRow = (props) => {
 						uuid={exercise.uuid}
 						date={exercise.created_at}
 						categories={exercise.categories}
+						modelUUID={exercise.modelUUID}
 						registerSelectedOption={registerSelectedOption}
 					/>
 				))}

@@ -8,6 +8,7 @@ const RecomendationExerciseCol = (props) => {
 	const uuid = props.uuid;
 	const date = props.date;
 	const categories = props.categories;
+	const modelUUID = props.modelUUID;
 	const registerSelectedOption = props.registerSelectedOption;
 	return (
 		<>
@@ -18,6 +19,7 @@ const RecomendationExerciseCol = (props) => {
 					uuid={uuid}
 					date={date}
 					categories={categories}
+					modelUUID={modelUUID}
 					registerSelectedOption={registerSelectedOption}
 				/>
 			</Col>

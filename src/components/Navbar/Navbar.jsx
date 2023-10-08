@@ -29,8 +29,10 @@ const NavbarProfile = (props) => {
 				.then((data) => {
 					let userName = `${data["first_name"]} ${data["last_name"]}`;
 					let userEmail = data["email"];
+					let userUUID = data["uuid"];
 					localStorage.setItem("user_name", userName);
 					localStorage.setItem("user_email", userEmail);
+					localStorage.setItem("user_uuid");
 					setUserFullName(userName);
 				});
 		}
