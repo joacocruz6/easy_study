@@ -38,7 +38,7 @@ const RecomendedExerciseCard = (props) => {
 						variant="primary"
 						style={{ margin: "4px" }}
 					>
-						More details
+						Mas detalles
 					</Button>
 				</Card.Body>
 				<Card.Footer className="text-muted">{date}</Card.Footer>

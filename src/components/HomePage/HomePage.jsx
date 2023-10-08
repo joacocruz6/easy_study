@@ -14,14 +14,17 @@ const HomePage = () => (
 					<Card className="card">
 						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
 						<Card.Body>
-							<Card.Title>See all study content</Card.Title>
+							<Card.Title>
+								Ver todos los archivos compartidos
+							</Card.Title>
 							<Card.Text>
-								Here you can see all the study material
-								submitted, filter them by categories.
+								En esta seccion, puedes ver todo el material de
+								estudio que tu y otros usuarios han subido a la
+								plataforma, y puedes filtrarlos por categoria.
 							</Card.Text>
 							<div className="text-center">
 								<Button href="/~easy-study/exercises/all">
-									See all content
+									Ver todo el material subido
 								</Button>
 							</div>
 						</Card.Body>
@@ -31,14 +34,14 @@ const HomePage = () => (
 					<Card className="card">
 						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
 						<Card.Body>
-							<Card.Title>Upload study content</Card.Title>
+							<Card.Title>Subir material de estuido</Card.Title>
 							<Card.Text>
-								Here you can upload or create study content to
-								the repositorium system.
+								En esta seccion puedes subir o crear material de
+								estudio para ser compartido.
 							</Card.Text>
 							<div className="text-center">
 								<Button href="/~easy-study/exercises/create">
-									Upload/Create Content
+									Subir/Crear Contenido
 								</Button>
 							</div>
 						</Card.Body>
@@ -51,14 +54,14 @@ const HomePage = () => (
 					<Card className="card">
 						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
 						<Card.Body>
-							<Card.Title>See my uploaded content</Card.Title>
+							<Card.Title>Ver mi material compartido.</Card.Title>
 							<Card.Text>
-								See the study content that <b>you</b> have
-								updated into the system.
+								Ver el material de estudio que solo <b>tu</b>{" "}
+								haz ingresado al sistema.
 							</Card.Text>
 							<div className="text-center">
 								<Button href="/~easy-study/exercises/my_exercises">
-									See my uploaded content
+									Ver mi material subido.
 								</Button>
 							</div>
 						</Card.Body>
@@ -68,13 +71,14 @@ const HomePage = () => (
 					<Card className="card">
 						{/*<Card.Img variant="top" src="holder.js/100px180" />*/}
 						<Card.Body>
-							<Card.Title>Profile</Card.Title>
+							<Card.Title>Perfil</Card.Title>
 							<Card.Text>
-								You can change and see your profile information.
+								En esta seccion puedes ver y modificar tu perfil
+								de usuario.
 							</Card.Text>
 							<div className="text-center">
 								<Button href="/~easy-study/profile">
-									Change profile
+									Ver perfil
 								</Button>
 							</div>
 						</Card.Body>

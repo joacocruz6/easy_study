@@ -37,16 +37,16 @@ const ChangePasswordForm = () => {
 			.then((data) => (document.location = "/~easy-study/profile/"))
 			.catch((error) => console.log(error));
 	};
-	const title = "Change Password";
+	const title = "Cambiar contraseña";
 	const submitButton = (
 		<Button type="submit" variant="success">
-			Change
+			Cambiar Contraseña
 		</Button>
 	);
 	const oldPasswordInput = (
 		<>
 			<Form.Group className="mb-3" controlId="formOldPassword">
-				<Form.Label>Old Password</Form.Label>
+				<Form.Label>Contraseña Antigua</Form.Label>
 				<Form.Control
 					type="password"
 					onChange={handleInput(setOldPassword)}
@@ -57,7 +57,7 @@ const ChangePasswordForm = () => {
 	const newPasswordInput = (
 		<>
 			<Form.Group className="mb-3" controlId="formNewPassword">
-				<Form.Label>New Password</Form.Label>
+				<Form.Label>Nueva Contraseña</Form.Label>
 				<Form.Control
 					type="password"
 					onChange={handleInput(setNewPassword)}
@@ -68,7 +68,7 @@ const ChangePasswordForm = () => {
 	const confirmNewPasswordInput = (
 		<>
 			<Form.Group className="mb-3" controlId="formConfirmNewPassword">
-				<Form.Label>Confirm New Password</Form.Label>
+				<Form.Label>Confirmar Nueva Contraseña</Form.Label>
 				<Form.Control
 					type="password"
 					onChange={handleInput(setConfirmNewPassword)}

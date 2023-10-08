@@ -13,15 +13,21 @@ const AnonymousLanding = () => (
 					<h2>Welcome!</h2>
 				</Card.Title>
 				<Card.Text>
-					<b>EasyStudy</b> is a software that allows you to study from
-					material that everyone can submit. This can be plain text
-					but also files. It uses <b>Repositorium</b> as backend, so
-					if you already have an account with a software that also
-					uses it, you can log-in with that account. Check it out with
-					creating an account and start using it:
+					<b>EasyStudy</b> es un software que te ayuda a estudiar de
+					material que cualquier otro usuario puede ingresar. Tu
+					tambien puedes aportar material de estudio para construir
+					una comunidad y ayudarse entre usuarios a obtener mejores
+					resultados en sus pruebas/controles/tareas/interrogaciones.{" "}
+					<b>EasyStudy</b> utiliza el motor de <b>Repositorium</b> por
+					detras, que permite conectar varios sistemas de comunidad
+					para enriquezer la experiencia. Si ya tienes cuenta de
+					usuario en otro software que utilize Repositorium, puedes
+					ingresar con la misma cuenta.
+					<br />
+					Conviertete en parte de la comunidad:
 				</Card.Text>
 				<NavigationRegister />
-				<Card.Text>Or log-in if you already have an account:</Card.Text>
+				<Card.Text>O ingresa si ya tienes una cuenta:</Card.Text>
 				<NavigationLogIn />
 			</Card.Body>
 		</Card>

@@ -16,21 +16,21 @@ const LoginPage = (props) => {
 		<>
 			<Card className="login_card">
 				<Card.Body>
-					<Card.Title>Log In</Card.Title>
+					<Card.Title>Ingresar</Card.Title>
 					<Form className="login_form" onSubmit={handleForm}>
 						<Form.Group className="mb-3" controlId="loginEmail">
-							<Form.Label>Email Address</Form.Label>
+							<Form.Label>Correo Electronico</Form.Label>
 							<Form.Control
 								type="email"
-								placeholder="Enter email"
+								placeholder="Ingrese su correo electronico"
 								onChange={handleInput(setUserEmail)}
 							/>
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="loginPassword">
-							<Form.Label>Password</Form.Label>
+							<Form.Label>Contraseña</Form.Label>
 							<Form.Control
 								type="password"
-								placeholder="Password"
+								placeholder="Contraseña"
 								onChange={handleInput(setUserPassword)}
 							/>
 						</Form.Group>

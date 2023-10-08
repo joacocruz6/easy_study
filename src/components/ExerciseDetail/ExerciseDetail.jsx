@@ -216,13 +216,13 @@ const ExerciseDetail = () => {
 			};
 			downloadButton = (
 				<Button className="button" variant="success" onClick={download}>
-					Download
+					Descargar
 				</Button>
 			);
 		} else {
 			downloadButton = (
 				<Button className="button" variant="success" disabled>
-					Download
+					Descargar
 				</Button>
 			);
 		}
@@ -262,17 +262,17 @@ const ExerciseDetail = () => {
 					<Accordion defaultActiveKey={defaultActiveKey} alwaysOpen>
 						<DetailSection
 							eventKey="0"
-							title="Categories"
+							title="Categorias"
 							content={categoriesSection}
 						/>
 						<DetailSection
 							eventKey="1"
-							title="Description"
+							title="Descripcion"
 							content={descriptionSection}
 						/>
 						<DetailSection
 							eventKey="2"
-							title="Content"
+							title="Contenido"
 							content={contentSection}
 						/>
 					</Accordion>
@@ -283,13 +283,15 @@ const ExerciseDetail = () => {
 						className="button button-right"
 						variant="danger"
 					>
-						Go back
+						Volver a todos los contenidos
 					</Button>
 				</Card.Body>
 				<Card.Footer className="card-footer">
-					<p className="card-left-footer">{leftFooter}</p>
-					<p className="card-center-footer">{centerFooter}</p>
-					<p className="card-right-footer">{rightFooter}</p>
+					<p className="card-left-footer">Autor: {leftFooter}</p>
+					<p className="card-center-footer">
+						Creado en: {centerFooter}
+					</p>
+					<p className="card-right-footer">Sistema: {rightFooter}</p>
 				</Card.Footer>
 			</Card>
 		</>

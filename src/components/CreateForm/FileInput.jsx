@@ -29,7 +29,7 @@ const FileInput = (props) => {
 	return (
 		<>
 			<Form.Group controlId="formFile" className="mb-3">
-				<Form.Label>Upload files</Form.Label>
+				<Form.Label>Subir Archivos</Form.Label>
 				{Object.keys(filesKeys).map((fileKey) => (
 					<Row>
 						<Col>

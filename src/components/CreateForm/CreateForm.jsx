@@ -134,7 +134,7 @@ const CreateForm = () => {
 		<>
 			<Card className="create_card">
 				<Card.Body>
-					<Card.Title>Create/Upload Exercises</Card.Title>
+					<Card.Title>Subir/Crear Ejercicios</Card.Title>
 					<Form className="create_form" onSubmit={onSubmit}>
 						<TitleInput onChange={setTitle} />
 						<CategoriesInput
@@ -144,13 +144,13 @@ const CreateForm = () => {
 							isLoading={isLoadingCategories}
 						/>
 						<ContentInput
-							label="Description"
+							label="Descripcion"
 							rows={5}
 							controlId="description-area"
 							onChange={setDescription}
 						/>
 						<ContentInput
-							label="Content"
+							label="Contenido"
 							rows={10}
 							controlId="content-area"
 							onChange={setContent}
@@ -169,7 +169,7 @@ const CreateForm = () => {
 								className="create_button"
 								variant="dark"
 							>
-								Create
+								Crear
 							</Button>
 						</div>
 					</Form>

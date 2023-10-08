@@ -46,10 +46,10 @@ const FileUploadModal = (props) => {
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={onHide}>
-						Close
+						Cerrar
 					</Button>
 					<Button variant="primary" onClick={handleSubmit}>
-						Save Changes
+						Guardar cambios
 					</Button>
 				</Modal.Footer>
 			</Modal>

@@ -8,7 +8,7 @@ import NavigationLogout from "../NavigationLogout/NavigationLogout.jsx";
 
 const renderTooltip = (props) => (
 	<Tooltip id="profile-tooltip" {...props}>
-		Check and edit profile.
+		Mira y edita tu perfil.
 	</Tooltip>
 );
 

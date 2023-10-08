@@ -5,7 +5,7 @@ import "../../../../utils/navigation_button.css";
 const NavigationLogIn = () => (
 	<>
 		<Button href="/~easy-study/login" className="menu_button">
-			Log In
+			Ingresar
 		</Button>
 	</>
 );

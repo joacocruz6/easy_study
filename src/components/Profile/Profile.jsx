@@ -73,7 +73,7 @@ const Profile = () => {
 		</>
 	) : (
 		<Button type="submit" variant="success">
-			Save
+			Guardar
 		</Button>
 	);
 	const emailValue = isLoading ? (
@@ -87,7 +87,7 @@ const Profile = () => {
 	const emailInput = (
 		<>
 			<Form.Group className="mb-3" controlId="formEmail">
-				<Form.Label>Email</Form.Label>
+				<Form.Label>Correo Electronico</Form.Label>
 				{emailValue}
 			</Form.Group>
 		</>
@@ -107,7 +107,7 @@ const Profile = () => {
 	const firstNameInput = (
 		<>
 			<Form.Group className="mb-3" controlId="formFirstName">
-				<Form.Label>First Name</Form.Label>
+				<Form.Label>Nombre</Form.Label>
 				{firstNameValue}
 			</Form.Group>
 		</>
@@ -128,7 +128,7 @@ const Profile = () => {
 	const lastNameInput = (
 		<>
 			<Form.Group className="mb-3" controlId="formLastName">
-				<Form.Label>Last Name</Form.Label>
+				<Form.Label>Apellido</Form.Label>
 				{lastNameValue}
 			</Form.Group>
 		</>
@@ -147,7 +147,7 @@ const Profile = () => {
 			style={{ marginTop: "10px" }}
 			variant="secondary"
 		>
-			Change Password
+			Cambiar tu contraseña
 		</Button>
 	);
 

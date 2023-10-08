@@ -7,7 +7,7 @@ const TitleInput = (props) => {
 	return (
 		<>
 			<Form.Group className="mb-3" controlId="formTitle">
-				<Form.Label>Title</Form.Label>
+				<Form.Label>Titulo</Form.Label>
 				<Form.Control
 					type="input"
 					placeholder="Titulo de Ejemplo"

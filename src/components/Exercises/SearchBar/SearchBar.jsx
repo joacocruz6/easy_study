@@ -60,7 +60,7 @@ const SearchBar = (props) => {
 					isLoading={isLoadingCategories}
 					onMenuScrollBottom={loadCategories}
 					options={availableCategories}
-					placeholder={"Search by category name"}
+					placeholder={"Buscar por categorias"}
 				/>
 			</div>
 		</>

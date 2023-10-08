@@ -11,7 +11,7 @@ const CategoriesInput = (props) => {
 	return (
 		<>
 			<Form.Group className="mb-3" controlId="formCategories">
-				<Form.Label>Categories</Form.Label>
+				<Form.Label>Categorias</Form.Label>
 				<CreatableSelect
 					isMulti
 					options={options}

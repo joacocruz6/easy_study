@@ -39,7 +39,7 @@ const NavbarProfile = (props) => {
 		return (
 			<>
 				<Navbar.Text>
-					Signed in as:{" "}
+					Usuario actual:{" "}
 					<span className="user_text">{userFullName}</span>
 				</Navbar.Text>
 				<NavigationLogout logout={logout} />

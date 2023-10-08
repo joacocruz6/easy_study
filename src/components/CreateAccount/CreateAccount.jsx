@@ -73,10 +73,10 @@ const CreateAccountForm = () => {
 	const emailInput = (
 		<>
 			<Form.Group className="mb-3" controlId="emailInput">
-				<Form.Label>Email</Form.Label>
+				<Form.Label>Correo Electronico</Form.Label>
 				<Form.Control
 					type="email"
-					placeholder="ex: example@email.com"
+					placeholder="ej: example@email.com"
 					onChange={handleInput(setEmail)}
 				/>
 			</Form.Group>
@@ -85,10 +85,10 @@ const CreateAccountForm = () => {
 	const firstNameInput = (
 		<>
 			<Form.Group className="mb-3" controlId="firstNameInput">
-				<Form.Label>First Name</Form.Label>
+				<Form.Label>Nombre</Form.Label>
 				<Form.Control
 					type="input"
-					placeholder="ex: Cosme"
+					placeholder="ej: Cosme"
 					onChange={handleInput(setFirstName)}
 				/>
 			</Form.Group>
@@ -97,7 +97,7 @@ const CreateAccountForm = () => {
 	const lastNameInput = (
 		<>
 			<Form.Group className="mb-3" controlId="lastNameInput">
-				<Form.Label>Last Name</Form.Label>
+				<Form.Label>Apellido</Form.Label>
 				<Form.Control
 					type="input"
 					placeholder="ex: Fulanito"
@@ -109,7 +109,7 @@ const CreateAccountForm = () => {
 	const passwordInput = (
 		<>
 			<Form.Group className="mb-3" controlId="passwordInput">
-				<Form.Label>Password</Form.Label>
+				<Form.Label>Contraseña</Form.Label>
 				<Form.Control
 					type="password"
 					onChange={handleInput(setPassword)}
