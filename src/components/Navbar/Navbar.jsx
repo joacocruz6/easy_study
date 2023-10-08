@@ -32,7 +32,7 @@ const NavbarProfile = (props) => {
 					let userUUID = data["uuid"];
 					localStorage.setItem("user_name", userName);
 					localStorage.setItem("user_email", userEmail);
-					localStorage.setItem("user_uuid");
+					localStorage.setItem("user_uuid", userUUID);
 					setUserFullName(userName);
 				});
 		}
