@@ -10,6 +10,38 @@ import FileInput from "./FileInput";
 import { Card } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import requests from "../../utils/requests";
+import InfoButton from "../InfoButton/InfoButton";
+
+const info = [
+	<p>
+		En este formulario puedes subir contenido para ser compartido con otros
+		usuarios.
+	</p>,
+	<b>Titulo:</b>,
+	<p>El titulo que tiene tu material de estudio.</p>,
+	<b>Categorias:</b>,
+	<p>
+		Una lista de categorias que ayudaran a los demas a saber que contenido
+		puede tener este material
+	</p>,
+	<b>Descripcion:</b>,
+	<p>Una pequeña descripcion de lo que estas compartiendo</p>,
+	<b>*Contenido:</b>,
+	<p>
+		Este campo es completamente opcional si es que subes un archivo. Aca es
+		el contenido del material de estudio en texto. Cabe destacar que
+		Repositorium y EasyStudy no compilan ni entienden ningun lenguaje o
+		texto que pueda ser compilado como latex o markdown. Cualquier material
+		debe ser subido como texto plano si es que llenas este campo.
+	</p>,
+	<b>Archivos:</b>,
+	<p>
+		Aqui puedes subir archivos para respaldar el material que estas
+		subiendo. Estos pueden ser archivos latex, compilados o el codigo en si.
+		Imagenes, entre otros. Repositorium y EasyStudy soportan cualquier tipo
+		multimedia.
+	</p>,
+];
 
 const CreateForm = () => {
 	const [title, setTitle] = useState("");
@@ -132,6 +164,11 @@ const CreateForm = () => {
 
 	return (
 		<>
+			<InfoButton
+				content={info}
+				header="Informacion"
+				overlayPlacement="right"
+			/>
 			<Card className="create_card">
 				<Card.Body>
 					<Card.Title>Subir/Crear Ejercicios</Card.Title>

@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap";
 import NavigationRegister from "../Navbar/NavigationMenu/NavigationRegister/NavigationRegister";
 import "./AnonymousLanding.css";
 import NavigationLogIn from "../Navbar/NavigationMenu/NavigationLogIn/NavigationLogIn";

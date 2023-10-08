@@ -7,15 +7,56 @@ import { useState, useEffect } from "react";
 import requests from "../../../utils/requests";
 import { ButtonGroup, Button } from "react-bootstrap";
 import RecomendationBox from "../Recomendation/Recomendation";
+import InfoButton from "../../InfoButton/InfoButton";
+
+const info = [
+	<p>
+		{" "}
+		Aqui puedes encontrar ejercicios de los cuales otros o tu han subido.
+		Estos tienen algunas categorias para saber de que tratan, ademas de su
+		titulo y una pequeña descripcion.
+	</p>,
+	<p>
+		{" "}
+		Lo primero es la barra de busqueda que permite buscar por categoria.
+		Aqui se puede observar que puedas buscar por mas de una categoria.
+	</p>,
+	<b>Recomendaciones:</b>,
+	<p>
+		La seccion de recomendaciones son propias de cada usuario y se basan el
+		algoritmos de sugerencia para que puedas elegir el mas apropiado para
+		estudiar. Este se basa en tu perfil como usuario, y en que otro material
+		de estudio haz utilizado recientemente.
+	</p>,
+	<b>Todo material:</b>,
+	<p>
+		Luego de la seccion de recomendaciones esta todo el material que han
+		subido tu o otros usuarios ordenados por fecha de creacion
+		descendientemente.{" "}
+	</p>,
+];
+
+const infoNoRecomendation = [
+	<p>
+		{" "}
+		Aqui puedes encontrar ejercicios que tu haz subido. Estos tienen algunas
+		categorias para saber de que tratan, ademas de su titulo y una pequeña
+		descripcion. Parecido a la seccion de ejercicios de todos los usuarios,
+		podemos ver el titulo que tu le pusiste ademas de una pequeña
+		descripcion y un poco de las categorias en cual los etiquetaste. Estas
+		se muestran en orden decreciente segun la fecha de creacion.
+	</p>,
+];
 
 const ExerciseList = (props) => {
 	const endpoint = props.endpoint;
+	const recomendations = props.recomendations;
 	const [exercises, setExercises] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [pageNumber, setPageNumber] = useState(1);
 	const [hasNext, setHasNext] = useState(false);
 	const [hasPrevious, setHasPrevious] = useState(false);
-
+	const extraInfo = recomendations ? info : infoNoRecomendation;
 	const loadExercisesData = (
 		page_number = pageNumber,
 		categoriesQuery = []
@@ -110,10 +151,15 @@ const ExerciseList = (props) => {
 			<ExerciseRow xs={1} md={2} exercises={exercise} />
 		))
 	);
-	const recomendation = <RecomendationBox />;
+	const recomendation = recomendations ? <RecomendationBox /> : " ";
 	return (
 		<>
 			<Container fluid={true}>
+				<InfoButton
+					header="Info sobre lista de ejercicios"
+					content={extraInfo}
+					overlayPlacement="right"
+				/>
 				<SearchBar loadHandler={loadExercisesData} />
 				{recomendation}
 				{content}

@@ -5,6 +5,47 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./HomePage.css";
+import InfoButton from "../InfoButton/InfoButton";
+import { BsList } from "react-icons/bs";
+
+const info = [
+	<p>
+		En esta interfaz puedes ver cuatro otras que puedes ingresar. Aqui se
+		detallaran que contiene cada una de ellas.
+	</p>,
+	<b>Ver todos los archivos compartidos:</b>,
+	<p>
+		Primero en ver los archivos compartidos puedes observar todos los
+		archivos que tu y otros usuarios han ingresado en el motor Repositorium.
+		Esto puede ser a travez de EasyStudy o bien de otros software que lo
+		utilizen. Tambien aca encontraras recomendaciones de material el cual
+		puedes ingresar para estudiar para tu siguiente evaluacion.
+	</p>,
+	<b>Subir material de estudio:</b>,
+	<p>
+		Arriba a la derecha puedes ingresar al formulario para agregar mas
+		material al sistema. Puedes reutilizarlo tu o bien otras personas
+		tambien pueden verse beneficiadas de este.
+	</p>,
+	<b>Ver mi material compartido:</b>,
+	<p>
+		Abajo a la izquierda esta el link para ingresar al material que solo
+		*TU* haz ingresado a EasyStudy.
+	</p>,
+	<b>Perfil:</b>,
+	<p>
+		Finalmente abajo a la derecha, puede ingresar a tu perfil y hacer todas
+		las modificaciones necesarias.
+	</p>,
+	<b>Otros:</b>,
+	<p>
+		Utiliza la barra de navegacion de arriba para acceder directamente a
+		estas secciones. Para hacerlo, presiona el menu con el simbolo{" "}
+		<BsList /> a la izquierda para desplegar el menu. Ahi podras encontrar
+		las distintas secciones al presionar ese boton o volver hacia esta
+		pagina haciendo click en Inicio.
+	</p>,
+];
 
 const HomePage = () => (
 	<>
@@ -86,6 +127,16 @@ const HomePage = () => (
 				</Col>
 			</Row>
 		</Container>
+		<InfoButton
+			style={{
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+			}}
+			header="Informacion Extra"
+			content={[info]}
+			overlayPlacement="right"
+		/>
 	</>
 );
 

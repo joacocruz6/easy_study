@@ -53,14 +53,20 @@ const Main = (props) => {
 					<Route
 						path="all"
 						element={
-							<ExerciseList endpoint="/api/v100/learning_object/" />
+							<ExerciseList
+								endpoint="/api/v100/learning_object/"
+								recomendations={true}
+							/>
 						}
 					/>
 					<Route path=":exercise_uuid" element={<ExerciseDetail />} />
 					<Route
 						path="my_exercises"
 						element={
-							<ExerciseList endpoint="/api/v100/learning_object/my_learning_objects/" />
+							<ExerciseList
+								endpoint="/api/v100/learning_object/my_learning_objects/"
+								recomendations={false}
+							/>
 						}
 					/>
 				</Route>
