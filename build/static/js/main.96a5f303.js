@@ -1,4 +1,4 @@
-/*! For license information please see main.2e41163c.js.LICENSE.txt */
+/*! For license information please see main.96a5f303.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -23276,7 +23276,10 @@
 												},
 											},
 											r = { item: e, model: t },
-											a = "/api/v100/experiment/" + o;
+											a =
+												"/api/v100/experiment/" +
+												o +
+												"/";
 										ro.put(a, n, r)
 											.then(function (e) {
 												if (e.ok) return e.json();
@@ -27220,4 +27223,4 @@
 				Ff();
 		})();
 })();
-//# sourceMappingURL=main.2e41163c.js.map
+//# sourceMappingURL=main.96a5f303.js.map

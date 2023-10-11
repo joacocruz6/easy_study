@@ -96,7 +96,7 @@ const RecomendationBox = () => {
 				item: learningObjectUUID,
 				model: selectedModelUUID,
 			};
-			const url = experimentUrl + experimentUUID;
+			const url = experimentUrl + experimentUUID + "/";
 			requests
 				.put(url, config, data)
 				.then((response) => {
