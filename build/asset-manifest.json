@@ -1,15 +1,15 @@
 {
 	"files": {
 		"main.css": "/~easy-study/static/css/main.082b5a83.css",
-		"main.js": "/~easy-study/static/js/main.96a5f303.js",
+		"main.js": "/~easy-study/static/js/main.5018e622.js",
 		"static/js/787.8526f0ce.chunk.js": "/~easy-study/static/js/787.8526f0ce.chunk.js",
 		"index.html": "/~easy-study/index.html",
 		"main.082b5a83.css.map": "/~easy-study/static/css/main.082b5a83.css.map",
-		"main.96a5f303.js.map": "/~easy-study/static/js/main.96a5f303.js.map",
+		"main.5018e622.js.map": "/~easy-study/static/js/main.5018e622.js.map",
 		"787.8526f0ce.chunk.js.map": "/~easy-study/static/js/787.8526f0ce.chunk.js.map"
 	},
 	"entrypoints": [
 		"static/css/main.082b5a83.css",
-		"static/js/main.96a5f303.js"
+		"static/js/main.5018e622.js"
 	]
 }

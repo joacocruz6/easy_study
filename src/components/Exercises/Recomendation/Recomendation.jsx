@@ -97,19 +97,12 @@ const RecomendationBox = () => {
 				model: selectedModelUUID,
 			};
 			const url = experimentUrl + experimentUUID + "/";
-			requests
-				.put(url, config, data)
-				.then((response) => {
-					if (response.ok) {
-						return response.json();
-					}
-					throw new Error("Error submitting experiment choice");
-				})
-				.then(
-					(data) =>
-						(window.location.href = `/~easy-study/exercises/${learningObjectUUID}`)
-				)
-				.catch((error) => console.log(error));
+			requests.put(url, config, data).then((response) => {
+				if (response.ok) {
+					window.location.href = `/~easy-study/exercises/${learningObjectUUID}`;
+				}
+				throw new Error("Error submitting experiment choice");
+			});
 		};
 	};
 

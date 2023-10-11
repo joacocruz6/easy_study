@@ -1,4 +1,4 @@
-/*! For license information please see main.96a5f303.js.LICENSE.txt */
+/*! For license information please see main.5018e622.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -23280,21 +23280,17 @@
 												"/api/v100/experiment/" +
 												o +
 												"/";
-										ro.put(a, n, r)
-											.then(function (e) {
-												if (e.ok) return e.json();
-												throw new Error(
+										ro.put(a, n, r).then(function (t) {
+											throw (
+												(t.ok &&
+													(window.location.href = "/~easy-study/exercises/".concat(
+														e
+													)),
+												new Error(
 													"Error submitting experiment choice"
-												);
-											})
-											.then(function (t) {
-												return (window.location.href = "/~easy-study/exercises/".concat(
-													e
-												));
-											})
-											.catch(function (e) {
-												return console.log(e);
-											});
+												))
+											);
+										});
 									};
 								},
 						  });
@@ -27223,4 +27219,4 @@
 				Ff();
 		})();
 })();
-//# sourceMappingURL=main.96a5f303.js.map
+//# sourceMappingURL=main.5018e622.js.map
