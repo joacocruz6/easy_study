@@ -31,7 +31,7 @@ const RecomendationBox = () => {
 		let promises = [];
 		for (let i = 0; i < recomendationModels.length; i++) {
 			const recomendationModelUUID = recomendationModels[i];
-			const url = `/api/v100/recomend/${recomendationModelUUID}/get_recomendation`;
+			const url = `/api/v100/recomend/${recomendationModelUUID}/get_recomendation/`;
 			const uuid = localStorage.getItem("user_uuid");
 			const data = {
 				uuid: uuid,
