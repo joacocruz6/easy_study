@@ -57,6 +57,14 @@ const RecomendationBox = () => {
 				if (loading) {
 					setRecomendedExercises(datas);
 					const url = `/api/v100/experiment/`;
+					const config = {
+						mode: "cors",
+						headers: {
+							Authorization: `Token ${localStorage.getItem(
+								"token"
+							)}`,
+						},
+					};
 					requests
 						.post(url, config, {})
 						.then((response) => {
@@ -78,6 +86,7 @@ const RecomendationBox = () => {
 			const config = {
 				headers: {
 					Authorization: `Token ${localStorage.getItem("token")}`,
+					mode: "cors",
 				},
 			};
 			let data = {
