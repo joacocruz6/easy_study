@@ -1,4 +1,4 @@
-/*! For license information please see main.1e730627.js.LICENSE.txt */
+/*! For license information please see main.2e41163c.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -23190,6 +23190,7 @@
 						for (
 							var e = {
 									headers: {
+										"Content-Type": "application/json",
 										Authorization: "Token ".concat(
 											localStorage.getItem("token")
 										),
@@ -23231,6 +23232,7 @@
 									var t = {
 										mode: "cors",
 										headers: {
+											"Content-Type": "application/json",
 											Authorization: "Token ".concat(
 												localStorage.getItem("token")
 											),
@@ -23262,13 +23264,15 @@
 								registerSelectedOption: function (e, t) {
 									return function () {
 										var n = {
+												mode: "cors",
 												headers: {
+													"Content-Type":
+														"application/json",
 													Authorization: "Token ".concat(
 														localStorage.getItem(
 															"token"
 														)
 													),
-													mode: "cors",
 												},
 											},
 											r = { item: e, model: t },
@@ -27216,4 +27220,4 @@
 				Ff();
 		})();
 })();
-//# sourceMappingURL=main.1e730627.js.map
+//# sourceMappingURL=main.2e41163c.js.map

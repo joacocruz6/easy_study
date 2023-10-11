@@ -25,6 +25,7 @@ const RecomendationBox = () => {
 	const loadRecomendations = () => {
 		const config = {
 			headers: {
+				"Content-Type": "application/json",
 				Authorization: `Token ${localStorage.getItem("token")}`,
 			},
 		};
@@ -60,6 +61,7 @@ const RecomendationBox = () => {
 					const config = {
 						mode: "cors",
 						headers: {
+							"Content-Type": "application/json",
 							Authorization: `Token ${localStorage.getItem(
 								"token"
 							)}`,
@@ -84,9 +86,10 @@ const RecomendationBox = () => {
 	const registerSelectedOption = (learningObjectUUID, selectedModelUUID) => {
 		return () => {
 			const config = {
+				mode: "cors",
 				headers: {
+					"Content-Type": "application/json",
 					Authorization: `Token ${localStorage.getItem("token")}`,
-					mode: "cors",
 				},
 			};
 			let data = {
