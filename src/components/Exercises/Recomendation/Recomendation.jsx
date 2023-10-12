@@ -56,7 +56,15 @@ const RecomendationBox = () => {
 			Promise.all(promises).then((datas) => {
 				console.log(datas);
 				if (loading) {
-					setRecomendedExercises(datas);
+					let recomendationExercises = [];
+					for (let i = 0; i < datas.length; i++) {
+						let exercise = datas[i];
+						if (exercise["uuid"] === "") {
+							continue;
+						}
+						recomendationExercises.push(exercise);
+					}
+					setRecomendedExercises(recomendationExercises);
 					const url = `/api/v100/experiment/`;
 					const config = {
 						mode: "cors",
