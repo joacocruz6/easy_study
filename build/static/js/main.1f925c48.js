@@ -1,4 +1,4 @@
-/*! For license information please see main.5018e622.js.LICENSE.txt */
+/*! For license information please see main.1f925c48.js.LICENSE.txt */
 !(function () {
 	var e = {
 			694: function (e, t) {
@@ -23228,8 +23228,12 @@
 						t.length > 0 &&
 							Promise.all(t).then(function (e) {
 								if ((console.log(e), u)) {
-									r(e);
-									var t = {
+									for (var t = [], n = 0; n < e.length; n++) {
+										var a = e[n];
+										"" !== a.uuid && t.push(a);
+									}
+									r(t);
+									var o = {
 										mode: "cors",
 										headers: {
 											"Content-Type": "application/json",
@@ -23238,7 +23242,7 @@
 											),
 										},
 									};
-									ro.post("/api/v100/experiment/", t, {})
+									ro.post("/api/v100/experiment/", o, {})
 										.then(function (e) {
 											if (e.ok) return e.json();
 											throw new Error();
@@ -27219,4 +27223,4 @@
 				Ff();
 		})();
 })();
-//# sourceMappingURL=main.5018e622.js.map
+//# sourceMappingURL=main.1f925c48.js.map
